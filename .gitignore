@@ -1,0 +1,44 @@
+# .gitignore for Unity projects
+
+# Ignore all files in the Temp folder
+Temp/
+
+# Ignore Library folder
+Library/
+
+# Ignore all .log files
+*.log
+
+# Ignore all .bak files
+*.bak
+
+# Ignore all .swp files
+*.swp
+
+# Ignore all .userprefs files
+*.userprefs
+
+# Ignore all .csproj, .sln, .user, .pidb, .suo, .tmp, .user, .userprefs, .prefs files
+*.csproj
+*.sln
+*.user
+*.pidb
+*.suo
+*.tmp
+*.userprefs
+*.prefs
+
+# Ignore all files in the Build folder
+Build/
+
+# Ignore all files in the Builds folder
+Builds/
+
+# Ignore all files in the obj folder
+obj/
+
+# Ignore all files in the .vs folder
+.vs/
+
+# Ignore all .DS_Store files (Mac OS)
+.DS_Store
