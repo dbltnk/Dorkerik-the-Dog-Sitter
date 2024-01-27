@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DogMovement : MonoBehaviour
 {
@@ -22,10 +23,23 @@ public class DogMovement : MonoBehaviour
 
     public GameObject PoopPrefab;
 
-    public float Happiness = 0f;
+    public float Happiness;
+
+    public Texture awooTexture;
+    public Texture borkBorkTexture;
+    public Texture tippyTapsTexture;
+    public Texture zoomiesTexture;
+    public Texture angeryTexture;
+    public Texture splootTexture;
+
+    private RawImage rawImage;
+
 
     void Start()
     {
+        // find a RawImage component in any child
+        rawImage = GetComponentInChildren<RawImage>();
+
         yPos = transform.position.y;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
@@ -119,7 +133,7 @@ public class DogMovement : MonoBehaviour
 
         // Clamp happiness between 0 and 1
         Happiness = Mathf.Clamp(Happiness, -100, 100);
-        print("Happiness: " + Happiness);
+        //print("Happiness: " + Happiness);
     }
 
     void OnTriggerEnter(Collider other)
@@ -145,24 +159,36 @@ public class DogMovement : MonoBehaviour
         Instantiate(PoopPrefab, transform.position + randomOffset, Quaternion.identity);
     }
 
+    IEnumerator DisableRawImageAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        rawImage.enabled = false;
+    }
+
     void Bark()
     {
         switch (Happiness)
         {
             case float n when (n < -75):
-                print("awoo");
+                rawImage.enabled = true;
+                rawImage.texture = awooTexture;
                 break;
             case float n when (n < -25):
-                print("bork bork");
+                rawImage.enabled = true;
+                rawImage.texture = borkBorkTexture;
                 break;
             case float n when (n > 25):
-                print("tippy taps");
+                rawImage.enabled = true;
+                rawImage.texture = tippyTapsTexture;
                 break;
             case float n when (n > 75):
-                print("zoomies");
+                rawImage.enabled = true;
+                rawImage.texture = zoomiesTexture;
                 break;
             default:
                 break;
         }
+
+        StartCoroutine(DisableRawImageAfterSeconds(3));
     }
 }
