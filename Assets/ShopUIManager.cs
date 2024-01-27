@@ -33,10 +33,20 @@ public class ShopUIManager : MonoBehaviour
         public string Name;
     }
 
-    public List<Dog> Dogs;
-
+    [System.Serializable]
+    public class Treat
+    {
+        public Button Button;
+        public GameObject TreatPrefab;
+        public int Price;
+        public bool Bought;
+        public string Name;
+    }
 
     public List<Place> Places;
+    public List<Dog> Dogs;
+    public List<Treat> Treats;
+
 
     void Start()
     {
@@ -50,6 +60,12 @@ public class ShopUIManager : MonoBehaviour
         {
             Dog dog = Dogs[i];
             dog.Button.GetComponentInChildren<TMP_Text>().text = $"{dog.Name} ({dog.Price})";
+        }
+
+        for (int i = 0; i < Treats.Count; i++)
+        {
+            Treat treat = Treats[i];
+            treat.Button.GetComponentInChildren<TMP_Text>().text = $"{treat.Name} ({treat.Price})";
         }
 
         // Set default active tab and panel
@@ -68,6 +84,12 @@ public class ShopUIManager : MonoBehaviour
         {
             Dog dog = Dogs[i];
             dog.Button.interactable = Scorer.Instance.CanAfford(dog.Price);
+        }
+
+        for (int i = 0; i < Treats.Count; i++)
+        {
+            Treat treat = Treats[i];
+            treat.Button.interactable = Scorer.Instance.CanAfford(treat.Price);
         }
 
     }
@@ -103,6 +125,19 @@ public class ShopUIManager : MonoBehaviour
             GameObject dogsParent = GameObject.Find("Dogs");
             Instantiate(dog.DogPrefab, new Vector3(-0.49000001f, 0.17f, 1.55999994f), Quaternion.identity, dogsParent.transform);
             dog.Bought = true;
+        }
+    }
+
+    public void TreatButtonClicked(int index)
+    {
+        Treat treat = Treats[index];
+        bool success = Scorer.Instance.TrySpendMoney(treat.Price);
+
+        if (success)
+        {
+            GameObject treatsParent = GameObject.Find("Treats");
+            Instantiate(treat.TreatPrefab, treatsParent.transform.position, Quaternion.identity, treatsParent.transform);
+            treat.Bought = true;
         }
     }
 

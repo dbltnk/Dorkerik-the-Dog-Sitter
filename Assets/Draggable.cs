@@ -35,14 +35,14 @@ public class Draggable : MonoBehaviour
                 float distanceToCollider = Vector3.Distance(hit.point, objectCollider.transform.position);
                 if (distanceToCollider <= someThreshold) // Replace someThreshold with a suitable value
                 {
-                    Debug.Log("Started dragging");
+                    //Debug.Log("Started dragging");
                     isDragging = true;
                     originalPosition = transform.position;
                     originalScale = transform.localScale;
                     transform.localScale = draggingScale;
                     objectCollider.enabled = false; // Disable the collider
-                    Debug.Log("Original position: " + originalPosition);
-                    Debug.Log("Original scale: " + originalScale);
+                    //Debug.Log("Original position: " + originalPosition);
+                    //Debug.Log("Original scale: " + originalScale);
                 }
             }
         }
@@ -59,12 +59,12 @@ public class Draggable : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && isDragging)
         {
-            Debug.Log("Stopped dragging");
+            //Debug.Log("Stopped dragging");
             isDragging = false;
             transform.localScale = originalScale;
             objectCollider.enabled = true; // Enable the collider
-            Debug.Log("Restored position: " + transform.position);
-            Debug.Log("Restored scale: " + transform.localScale);
+            //Debug.Log("Restored position: " + transform.position);
+            //Debug.Log("Restored scale: " + transform.localScale);
             transform.position = new Vector3(transform.position.x, originalPosition.y, transform.position.z);
         }
     }

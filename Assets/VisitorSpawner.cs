@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class VisitorSpawner : MonoBehaviour
@@ -24,6 +25,8 @@ public class VisitorSpawner : MonoBehaviour
 
     void SpawnVisitor()
     {
-        Instantiate(visitorPrefab, transform.position, Quaternion.identity);
+        GameObject vis = Instantiate(visitorPrefab, transform.position, Quaternion.identity);
+        vis.transform.SetParent(GameObject.Find("Hoomans").transform);
+
     }
 }

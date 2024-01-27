@@ -34,6 +34,9 @@ public class DogMovement : MonoBehaviour
 
     private RawImage rawImage;
 
+    public string Name;
+    public List<string> TreatsLiked;
+
 
     void Start()
     {
@@ -134,6 +137,24 @@ public class DogMovement : MonoBehaviour
         // Clamp happiness between 0 and 1
         Happiness = Mathf.Clamp(Happiness, -100, 100);
         //print("Happiness: " + Happiness);
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Treat" && TreatsLiked.Contains(other.gameObject.GetComponentInChildren<Treat>().Name))
+        {
+            rawImage.enabled = true;
+            rawImage.texture = splootTexture;
+            StartCoroutine(DisableRawImageAfterSeconds(3));
+            Destroy(other.gameObject); // destroy the treat
+        }
+        else if (other.gameObject.tag == "Treat" && !TreatsLiked.Contains(other.gameObject.GetComponentInChildren<Treat>().Name))
+        {
+            rawImage.enabled = true;
+            rawImage.texture = angeryTexture;
+            StartCoroutine(DisableRawImageAfterSeconds(3));
+            Destroy(other.gameObject); // destroy the treat
+        }
     }
 
     void OnTriggerEnter(Collider other)

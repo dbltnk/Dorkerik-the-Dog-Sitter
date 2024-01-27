@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 2965606951691506553}
   - component: {fileID: 1554900261031642922}
   m_Layer: 0
-  m_Name: Dog
+  m_Name: DogSmol
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,6 +294,9 @@ MonoBehaviour:
   zoomiesTexture: {fileID: 2800000, guid: c4109267ac90bf0cab0b915fa903d2b8, type: 3}
   angeryTexture: {fileID: 2800000, guid: 2821b9f5fcea1654dac30923e8c9af23, type: 3}
   splootTexture: {fileID: 2800000, guid: 350e8d46420ced24c92250c21a3e72a0, type: 3}
+  Name: Smol Boi
+  TreatsLiked:
+  - Stick
 --- !u!114 &1554900261031642922
 MonoBehaviour:
   m_ObjectHideFlags: 0

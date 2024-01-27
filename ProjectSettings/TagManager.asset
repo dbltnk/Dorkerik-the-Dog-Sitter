@@ -7,6 +7,7 @@ TagManager:
   - Dog
   - Poop
   - Human
+  - Treat
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class Scorer : MonoBehaviour
     public static Scorer Instance { get; private set; }
     public TextMeshProUGUI scoreText;
 
-    private int CurrentMoney = 10;
+    private int CurrentMoney = 20;
 
     void Awake()
     {
@@ -22,6 +22,7 @@ public class Scorer : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        scoreText.text = "Money: $" + CurrentMoney;
     }
 
     public void AddMoney()
