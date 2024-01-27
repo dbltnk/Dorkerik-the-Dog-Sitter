@@ -32,10 +32,10 @@ public class DogMovement : MonoBehaviour
         InvokeRepeating("PickNewTarget", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
 
         // Scale the object randomly
-        float scaleX = Random.Range(0.4f, 0.6f);
-        float scaleY = Random.Range(0.4f, 0.6f);
-        float scaleZ = Random.Range(0.4f, 0.6f);
-        transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
+        //float scaleX = Random.Range(0.4f, 0.6f);
+        //float scaleY = Random.Range(0.4f, 0.6f);
+        //float scaleZ = Random.Range(0.4f, 0.6f);
+        //transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
 
         // Set a random color
         Renderer renderer = transform.Find("Capsule").GetComponent<Renderer>();
