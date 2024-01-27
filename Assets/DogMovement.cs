@@ -22,6 +22,8 @@ public class DogMovement : MonoBehaviour
 
     public GameObject PoopPrefab;
 
+    public float Happiness = 0f;
+
     void Start()
     {
         yPos = transform.position.y;
@@ -78,6 +80,45 @@ public class DogMovement : MonoBehaviour
         {
             currentSpeed = Mathf.Max(currentSpeed - acceleration * Time.deltaTime, 0);
         }
+
+        CalculateHappiness();
+    }
+
+    private void CalculateHappiness()
+    {
+        // Happiness decreases for every poop and other dog or hooman that is within a radius of 5f
+        int numDogsWithinRadius = 0;
+        int numPoopsWithinRadius = 0;
+        int numHoomansWithinRadius = 0;
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 5f);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject.tag == "Dog")
+            {
+                if (collider.gameObject == gameObject) continue; // Skip self
+                numDogsWithinRadius++;
+            }
+            else if (collider.gameObject.tag == "Poop")
+            {
+                numPoopsWithinRadius++;
+            }
+            else if (collider.gameObject.tag == "Human")
+            {
+                numHoomansWithinRadius++;
+            }
+        }
+
+        float weightPoops = 0.5f;
+        float weightDogs = 1f;
+        float weightHoomans = 0.1f;
+
+        float happinessDecreasePerSecond = weightPoops * numPoopsWithinRadius + weightDogs * numDogsWithinRadius + weightHoomans * numHoomansWithinRadius;
+        Happiness -= happinessDecreasePerSecond * Time.deltaTime;
+
+        // Clamp happiness between 0 and 1
+        Happiness = Mathf.Clamp(Happiness, -100, 100);
+        print("Happiness: " + Happiness);
     }
 
     void OnTriggerEnter(Collider other)

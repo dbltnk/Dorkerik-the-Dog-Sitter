@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1554900261031642922}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   maxMoveSpeed: 6
   acceleration: 0.5
   PoopPrefab: {fileID: 4761822417820374, guid: 02026d5a6d2bbd3ab9506700d1b826c0, type: 3}
+  Happiness: 0
 --- !u!114 &1554900261031642922
 MonoBehaviour:
   m_ObjectHideFlags: 0
