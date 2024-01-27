@@ -298,6 +298,7 @@ MonoBehaviour:
   Name: Chonky Boi
   TreatsLiked:
   - Cupcake
+  ValueMultiplier: 5
 --- !u!114 &1554900261031642922
 MonoBehaviour:
   m_ObjectHideFlags: 0

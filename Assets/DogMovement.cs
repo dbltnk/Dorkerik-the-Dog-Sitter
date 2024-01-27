@@ -38,6 +38,8 @@ public class DogMovement : MonoBehaviour
     public string Name;
     public List<string> TreatsLiked;
 
+    public float ValueMultiplier;
+
 
     void Start()
     {

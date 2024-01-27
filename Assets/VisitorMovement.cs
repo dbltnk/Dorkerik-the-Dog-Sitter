@@ -86,6 +86,11 @@ public class VisitorMovement : MonoBehaviour
 
     void CheckHappiness()
     {
+        StartCoroutine(CoCheckHappiness());
+    }
+
+    private IEnumerator CoCheckHappiness()
+    {
         Collider[] colliders = Physics.OverlapSphere(transform.position, DogViewingRange);
         //Debug.Log("Number of colliders detected: " + colliders.Length);
         float totalHappiness = 0;
@@ -95,7 +100,7 @@ public class VisitorMovement : MonoBehaviour
             {
                 float happiness = collider.GetComponent<DogMovement>().Happiness;
                 //Debug.Log("Dog detected with happiness: " + happiness);
-                totalHappiness += happiness;
+                totalHappiness += happiness * collider.GetComponent<DogMovement>().ValueMultiplier;
             }
         }
 
@@ -103,8 +108,14 @@ public class VisitorMovement : MonoBehaviour
 
         if (totalHappiness > 0)
         {
-            //Debug.Log("Instantiating heart prefab due to positive total happiness.");
-            Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            // for every 100 happiness, spawn a heart
+            int numHeartsToSpawn = Mathf.CeilToInt(totalHappiness / 100);
+            for (int i = 0; i < numHeartsToSpawn; i++)
+            {
+                yield return new WaitForSeconds(0.15f);
+                //Debug.Log("Instantiating heart prefab due to positive total happiness.");
+                Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            }
         }
         else
         {

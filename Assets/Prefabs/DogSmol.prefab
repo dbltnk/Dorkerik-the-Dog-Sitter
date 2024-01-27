@@ -298,6 +298,7 @@ MonoBehaviour:
   Name: Smol Boi
   TreatsLiked:
   - Stick
+  ValueMultiplier: 1
 --- !u!114 &1554900261031642922
 MonoBehaviour:
   m_ObjectHideFlags: 0
