@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 9085823783913724949}
   - component: {fileID: 1043652166170807733}
   - component: {fileID: 6726902280134621169}
+  - component: {fileID: -245441795039703872}
   m_Layer: 0
-  m_Name: Visitor
+  m_Name: Hooman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,3 +157,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-245441795039703872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928087351302878577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c169b4a9c8166baac339e4d0d0291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

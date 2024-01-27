@@ -9761,7 +9761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1784695064}
   m_Layer: 0
-  m_Name: Visitors
+  m_Name: Hoomans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
