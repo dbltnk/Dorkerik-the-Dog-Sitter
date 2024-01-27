@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5249962920231255160}
   - component: {fileID: 4111908819492980298}
   - component: {fileID: 182608949420852490}
+  - component: {fileID: 6937521087294621981}
   m_Layer: 0
   m_Name: Ween Long
   m_TagString: Untagged
@@ -43,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135540962899457701}
-  m_Mesh: {fileID: 4161201889706389872, guid: 1299dfd772c05bf4eb2437d163771001, type: 3}
+  m_Mesh: {fileID: 4493585093827132993, guid: cbc72368b67ff13898f0b7200311b382, type: 3}
 --- !u!23 &3944561632998055196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 184c555a1b617bd43992305877c1f127, type: 2}
+  - {fileID: 7613370674500626921, guid: cbc72368b67ff13898f0b7200311b382, type: 3}
+  - {fileID: -3451619182824238153, guid: cbc72368b67ff13898f0b7200311b382, type: 3}
+  - {fileID: -876546973899608171, guid: cbc72368b67ff13898f0b7200311b382, type: 3}
+  - {fileID: 4033062785963826160, guid: cbc72368b67ff13898f0b7200311b382, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,3 +161,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
+--- !u!114 &6937521087294621981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135540962899457701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c169b4a9c8166baac339e4d0d0291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

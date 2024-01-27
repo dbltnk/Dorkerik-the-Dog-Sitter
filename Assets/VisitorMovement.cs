@@ -68,13 +68,11 @@ public class VisitorMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        print("Triggered with " + other.gameObject.name);
         PickNewTarget();
     }
 
     void PickNewTarget()
     {
-        print("Picking new target");
         moveRange = Random.Range(minMoveRange, maxMoveRange); // Pick a random move range
         targetPosition = new Vector3(
             transform.position.x + Random.Range(-moveRange, moveRange),
@@ -87,8 +85,6 @@ public class VisitorMovement : MonoBehaviour
 
     void CheckHappiness()
     {
-        print("Checking happiness");
-        // Spawn the Heart prefab above the visitor's head at 1m height
         Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
     }
 }
