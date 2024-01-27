@@ -42,3 +42,5 @@ obj/
 
 # Ignore all .DS_Store files (Mac OS)
 .DS_Store
+UserSettings/Layouts/default-2022.dwlt
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
