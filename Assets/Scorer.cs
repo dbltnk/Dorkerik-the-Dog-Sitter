@@ -8,7 +8,7 @@ public class Scorer : MonoBehaviour
     public static Scorer Instance { get; private set; }
     public TextMeshProUGUI scoreText;
 
-    private int CurrentScore = 0;
+    private int CurrentMoney = 0;
 
     void Awake()
     {
@@ -23,14 +23,28 @@ public class Scorer : MonoBehaviour
         }
     }
 
-    public void AddScore()
+    public void AddMoney()
     {
-        CurrentScore += 1;
-        scoreText.text = "Money: $" + CurrentScore;
+        CurrentMoney += 1;
+        scoreText.text = "Money: $" + CurrentMoney;
     }
 
-    public int GetScore()
+    public int GetMoney()
     {
-        return CurrentScore;
+        return CurrentMoney;
+    }
+
+    public bool TrySpendMoney(int amount)
+    {
+        if (CurrentMoney >= amount)
+        {
+            CurrentMoney -= amount;
+            scoreText.text = "Money: $" + CurrentMoney;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

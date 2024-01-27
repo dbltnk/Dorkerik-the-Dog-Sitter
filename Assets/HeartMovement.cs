@@ -19,7 +19,7 @@ public class HeartMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, heartTarget.position) <= 0.5f)
         {
-            Scorer.Instance.AddScore();
+            Scorer.Instance.AddMoney();
             Destroy(gameObject);
         }
     }
