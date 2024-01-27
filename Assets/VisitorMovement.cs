@@ -21,6 +21,7 @@ public class VisitorMovement : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject HeartPrefab;
+    public float DogViewingRange;
 
     void Start()
     {
@@ -85,6 +86,29 @@ public class VisitorMovement : MonoBehaviour
 
     void CheckHappiness()
     {
-        Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, DogViewingRange);
+        //Debug.Log("Number of colliders detected: " + colliders.Length);
+        float totalHappiness = 0;
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Dog"))
+            {
+                float happiness = collider.GetComponent<DogMovement>().Happiness;
+                //Debug.Log("Dog detected with happiness: " + happiness);
+                totalHappiness += happiness;
+            }
+        }
+
+        //Debug.Log("Total happiness: " + totalHappiness);
+
+        if (totalHappiness > 0)
+        {
+            //Debug.Log("Instantiating heart prefab due to positive total happiness.");
+            Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        }
+        else
+        {
+            //Debug.Log("No heart prefab instantiated due to non-positive total happiness.");
+        }
     }
 }

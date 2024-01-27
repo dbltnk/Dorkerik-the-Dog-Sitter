@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visitorPrefab: {fileID: 5928087351302878577, guid: ae9fcb91c63974688ba0ba136804379d, type: 3}
-  spawnIntervalMin: 1
-  spawnIntervalMax: 3
+  spawnIntervalMin: 4
+  spawnIntervalMax: 8
 --- !u!1 &120706102
 GameObject:
   m_ObjectHideFlags: 0

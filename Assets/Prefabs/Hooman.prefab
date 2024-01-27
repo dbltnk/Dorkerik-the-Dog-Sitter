@@ -130,6 +130,7 @@ MonoBehaviour:
   maxMoveSpeed: 2
   acceleration: 0.5
   HeartPrefab: {fileID: 4761822417820374, guid: 3d1a91f5fac7ee6aea7dcd44d8746bf9, type: 3}
+  DogViewingRange: 7.5
 --- !u!54 &6726902280134621169
 Rigidbody:
   m_ObjectHideFlags: 0

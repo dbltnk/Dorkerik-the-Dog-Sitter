@@ -146,6 +146,7 @@ public class DogMovement : MonoBehaviour
         {
             rawImage.enabled = true;
             rawImage.texture = chomppTexture;
+            Happiness += 50;
             StartCoroutine(DisableRawImageAfterSeconds(3));
             Destroy(other.gameObject); // destroy the treat
         }
@@ -153,6 +154,7 @@ public class DogMovement : MonoBehaviour
         {
             rawImage.enabled = true;
             rawImage.texture = angeryTexture;
+            Happiness -= 25;
             StartCoroutine(DisableRawImageAfterSeconds(3));
             Destroy(other.gameObject); // destroy the treat
         }
