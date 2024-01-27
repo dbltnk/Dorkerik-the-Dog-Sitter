@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class VisitorMovement : MonoBehaviour
 {
-    public float moveRange = 20f;
+    public float minMoveRange = 8f;
+    public float maxMoveRange = 24f;
+    private float moveRange;
+
     public float moveInterval = 10f;
     public float moveRandInterval = 2f;
     public float minMoveSpeed = 3f;
@@ -16,6 +19,8 @@ public class VisitorMovement : MonoBehaviour
     private float yPos;
     private Vector3 targetPosition;
     private Rigidbody rb;
+
+    public GameObject HeartPrefab;
 
     void Start()
     {
@@ -32,6 +37,8 @@ public class VisitorMovement : MonoBehaviour
         {
             renderer.material.color = new Color(Random.value, Random.value, Random.value);
         }
+
+        InvokeRepeating("CheckHappiness", 5f, Random.Range(4f, 6f));
     }
 
     void Update()
@@ -68,6 +75,7 @@ public class VisitorMovement : MonoBehaviour
     void PickNewTarget()
     {
         print("Picking new target");
+        moveRange = Random.Range(minMoveRange, maxMoveRange); // Pick a random move range
         targetPosition = new Vector3(
             transform.position.x + Random.Range(-moveRange, moveRange),
             yPos,
@@ -75,5 +83,12 @@ public class VisitorMovement : MonoBehaviour
         );
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed); // Pick a random move speed
         currentSpeed = 0; // Reset speed when a new target is picked
+    }
+
+    void CheckHappiness()
+    {
+        print("Checking happiness");
+        // Spawn the Heart prefab above the visitor's head at 1m height
+        Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
     }
 }

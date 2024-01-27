@@ -121,12 +121,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2100b4c6f4786bd6c84ebbbfbacdc244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRange: 20
+  minMoveRange: 8
+  maxMoveRange: 24
   moveInterval: 10
   moveRandInterval: 2
   minMoveSpeed: 1
   maxMoveSpeed: 2
   acceleration: 0.5
+  HeartPrefab: {fileID: 4761822417820374, guid: 3d1a91f5fac7ee6aea7dcd44d8746bf9, type: 3}
 --- !u!54 &6726902280134621169
 Rigidbody:
   m_ObjectHideFlags: 0
