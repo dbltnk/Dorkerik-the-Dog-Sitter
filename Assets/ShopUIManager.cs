@@ -23,6 +23,19 @@ public class ShopUIManager : MonoBehaviour
         public string Name;
     }
 
+    [System.Serializable]
+    public class Dog
+    {
+        public Button Button;
+        public GameObject DogPrefab;
+        public int Price;
+        public bool Bought;
+        public string Name;
+    }
+
+    public List<Dog> Dogs;
+
+
     public List<Place> Places;
 
     void Start()
@@ -31,6 +44,12 @@ public class ShopUIManager : MonoBehaviour
         {
             Place place = Places[i];
             place.Button.GetComponentInChildren<TMP_Text>().text = $"{place.Name} ({place.Price})";
+        }
+
+        for (int i = 0; i < Dogs.Count; i++)
+        {
+            Dog dog = Dogs[i];
+            dog.Button.GetComponentInChildren<TMP_Text>().text = $"{dog.Name} ({dog.Price})";
         }
 
         // Set default active tab and panel
@@ -44,6 +63,13 @@ public class ShopUIManager : MonoBehaviour
             Place place = Places[i];
             place.Button.interactable = Scorer.Instance.CanAfford(place.Price) && !place.Bought;
         }
+
+        for (int i = 0; i < Dogs.Count; i++)
+        {
+            Dog dog = Dogs[i];
+            dog.Button.interactable = Scorer.Instance.CanAfford(dog.Price);
+        }
+
     }
 
     public void PlaceButtonClicked(int index)
@@ -64,6 +90,19 @@ public class ShopUIManager : MonoBehaviour
                 place.Button.GetComponentInChildren<TMP_Text>().text = "Bought";
                 place.Button.interactable = false;
             }
+        }
+    }
+
+    public void DogButtonClicked(int index)
+    {
+        Dog dog = Dogs[index];
+        bool success = Scorer.Instance.TrySpendMoney(dog.Price);
+
+        if (success)
+        {
+            GameObject dogsParent = GameObject.Find("Dogs");
+            Instantiate(dog.DogPrefab, new Vector3(-0.49000001f, 0.17f, 1.55999994f), Quaternion.identity, dogsParent.transform);
+            dog.Bought = true;
         }
     }
 

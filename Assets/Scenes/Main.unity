@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,7 +203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -540,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -757,7 +757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Good Boi
+  m_text: Smol Boi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -980,7 +980,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -497.45}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &157646234
 MonoBehaviour:
@@ -1090,7 +1090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1179,7 +1179,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168678808
 MonoBehaviour:
@@ -1224,7 +1224,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 168678809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035612568}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: DogButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &168678809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1544,7 +1556,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -115}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243279446
 MonoBehaviour:
@@ -1642,7 +1654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1708,7 +1720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1930,7 +1942,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299117600
 MonoBehaviour:
@@ -1975,7 +1987,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 299117601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035612568}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: DogButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &299117601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,7 +2128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3188,7 +3212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3797,7 +3821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chonky Boi
+  m_text: Lil' Pupper
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3911,7 +3935,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718163702
 MonoBehaviour:
@@ -3956,7 +3980,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 718163703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035612568}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: DogButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &718163703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4275,7 +4311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4446,7 +4482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5155,7 +5191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6254,7 +6290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mini Boi
+  m_text: Looong Boi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6654,7 +6690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6778,7 +6814,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -497.45}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282180947
 MonoBehaviour:
@@ -7009,7 +7045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7304,7 +7340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -688.67505}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336429903
 MonoBehaviour:
@@ -7761,7 +7797,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481598814
 MonoBehaviour:
@@ -7806,7 +7842,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481598815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035612568}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: DogButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1481598815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7882,7 +7930,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -688.67505}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546627883
 MonoBehaviour:
@@ -8700,7 +8748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fluffy Boy
+  m_text: Chonky Boy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8908,7 +8956,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661470986
 MonoBehaviour:
@@ -8953,7 +9001,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1661470987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035612568}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: DogButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1661470987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9029,7 +9089,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668546597
 MonoBehaviour:
@@ -9074,7 +9134,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668546598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2035612568}
+        m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
+        m_MethodName: DogButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668546598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9255,7 +9327,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -115}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692967681
 MonoBehaviour:
@@ -9365,7 +9437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8091078758822678695, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9449,7 +9521,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 186, y: -306.225}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1727886675
 MonoBehaviour:
@@ -9602,7 +9674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Long Boi
+  m_text: Good Boi
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11113,6 +11185,37 @@ MonoBehaviour:
   PanelTabDogs: {fileID: 1069640189}
   PanelTabTreats: {fileID: 905851481}
   PanelTabPlace: {fileID: 459211210}
+  Dogs:
+  - Button: {fileID: 1668546597}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
+    Price: 10
+    Bought: 0
+    Name: Smol Boi
+  - Button: {fileID: 1481598814}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
+    Price: 30
+    Bought: 0
+    Name: Good Boy
+  - Button: {fileID: 168678808}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
+    Price: 50
+    Bought: 0
+    Name: Lil' Pupper
+  - Button: {fileID: 299117600}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
+    Price: 100
+    Bought: 0
+    Name: Looong Boi
+  - Button: {fileID: 1661470986}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
+    Price: 200
+    Bought: 0
+    Name: Chonky Boi
+  - Button: {fileID: 718163702}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1d0620acee96bc0929bb8e21892c7056, type: 3}
+    Price: 500
+    Bought: 0
+    Name: Scruffy Boi
   Places:
   - Button: {fileID: 1692967681}
     GameObject: {fileID: 1994705730}

@@ -9,7 +9,7 @@ public class Scorer : MonoBehaviour
     public static Scorer Instance { get; private set; }
     public TextMeshProUGUI scoreText;
 
-    private int CurrentMoney = 0;
+    private int CurrentMoney = 10;
 
     void Awake()
     {
