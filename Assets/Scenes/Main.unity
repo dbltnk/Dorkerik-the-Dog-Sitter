@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Good
+  m_text: Fancy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5673,7 +5673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fancy
+  m_text: Deluxe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5941,7 +5941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Simple
+  m_text: Basic
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9768,7 +9768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Regular
+  m_text: Good
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11118,22 +11118,27 @@ MonoBehaviour:
     GameObject: {fileID: 1994705730}
     Price: 0
     Bought: 0
+    Name: Basic
   - Button: {fileID: 1727886675}
     GameObject: {fileID: 1246923505}
     Price: 75
     Bought: 0
+    Name: Good
   - Button: {fileID: 157646234}
     GameObject: {fileID: 1282031686}
     Price: 250
     Bought: 0
+    Name: Fancy
   - Button: {fileID: 1336429903}
     GameObject: {fileID: 512208450}
     Price: 500
     Bought: 0
+    Name: Deluxe
   - Button: {fileID: 1546627883}
     GameObject: {fileID: 425257626}
     Price: 1000
     Bought: 0
+    Name: Ultra
 --- !u!1 &2076024930
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Scorer : MonoBehaviour
 {
@@ -46,5 +47,10 @@ public class Scorer : MonoBehaviour
         {
             return false;
         }
+    }
+
+    internal bool CanAfford(int price)
+    {
+        return CurrentMoney >= price;
     }
 }

@@ -20,21 +20,30 @@ public class ShopUIManager : MonoBehaviour
         public GameObject GameObject;
         public int Price;
         public bool Bought;
+        public string Name;
     }
 
     public List<Place> Places;
 
     void Start()
     {
-        // Initialize places
         for (int i = 0; i < Places.Count; i++)
         {
             Place place = Places[i];
-            place.Button.GetComponentInChildren<TMP_Text>().text = $"Buy ({place.Price})";
+            place.Button.GetComponentInChildren<TMP_Text>().text = $"{place.Name} ({place.Price})";
         }
 
         // Set default active tab and panel
         TabPlaceClicked();
+    }
+
+    void Update()
+    {
+        for (int i = 0; i < Places.Count; i++)
+        {
+            Place place = Places[i];
+            place.Button.interactable = Scorer.Instance.CanAfford(place.Price) && !place.Bought;
+        }
     }
 
     public void PlaceButtonClicked(int index)
@@ -51,10 +60,10 @@ public class ShopUIManager : MonoBehaviour
                 place.GameObject.SetActive(true);
                 place.Bought = true;
 
-                // Disable the button
+                // Update the button text and disable the button
+                place.Button.GetComponentInChildren<TMP_Text>().text = "Bought";
                 place.Button.interactable = false;
             }
-
         }
     }
 
