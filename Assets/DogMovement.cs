@@ -49,7 +49,8 @@ public class DogMovement : MonoBehaviour
             renderer.material.color = new Color(r, g, b);
         }
 
-        InvokeRepeating("CheckHappiness", Random.Range(3f, 9f), Random.Range(3f, 9f));
+        InvokeRepeating("Poop", Random.Range(3f, 9f), Random.Range(3f, 9f));
+        InvokeRepeating("Bark", Random.Range(9f, 11f), Random.Range(9f, 11f));
     }
 
     void Update()
@@ -138,9 +139,30 @@ public class DogMovement : MonoBehaviour
         currentSpeed = 0; // Reset speed when a new target is picked
     }
 
-    void CheckHappiness()
+    void Poop()
     {
-        Vector3 randomOffset = new Vector3(Random.Range(-0.25f, 0.25f), Random.Range(-0.25f, 0.25f), Random.Range(0.25f, 0.5f));
+        Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(0.5f, 0.75f));
         Instantiate(PoopPrefab, transform.position + randomOffset, Quaternion.identity);
+    }
+
+    void Bark()
+    {
+        switch (Happiness)
+        {
+            case float n when (n < -75):
+                print("awoo");
+                break;
+            case float n when (n < -25):
+                print("bork bork");
+                break;
+            case float n when (n > 25):
+                print("tippy taps");
+                break;
+            case float n when (n > 75):
+                print("zoomies");
+                break;
+            default:
+                break;
+        }
     }
 }
