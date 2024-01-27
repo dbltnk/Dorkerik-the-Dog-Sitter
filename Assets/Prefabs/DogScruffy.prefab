@@ -294,6 +294,7 @@ MonoBehaviour:
   zoomiesTexture: {fileID: 2800000, guid: c4109267ac90bf0cab0b915fa903d2b8, type: 3}
   angeryTexture: {fileID: 2800000, guid: 2821b9f5fcea1654dac30923e8c9af23, type: 3}
   splootTexture: {fileID: 2800000, guid: 350e8d46420ced24c92250c21a3e72a0, type: 3}
+  chomppTexture: {fileID: 2800000, guid: f13dda9ea7cfff62a9b1ed897e3ea429, type: 3}
   Name: Scruffy Boi
   TreatsLiked:
   - Bone

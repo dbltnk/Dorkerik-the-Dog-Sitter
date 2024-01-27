@@ -31,6 +31,7 @@ public class DogMovement : MonoBehaviour
     public Texture zoomiesTexture;
     public Texture angeryTexture;
     public Texture splootTexture;
+    public Texture chomppTexture;
 
     private RawImage rawImage;
 
@@ -144,7 +145,7 @@ public class DogMovement : MonoBehaviour
         if (other.gameObject.tag == "Treat" && TreatsLiked.Contains(other.gameObject.GetComponentInChildren<Treat>().Name))
         {
             rawImage.enabled = true;
-            rawImage.texture = splootTexture;
+            rawImage.texture = chomppTexture;
             StartCoroutine(DisableRawImageAfterSeconds(3));
             Destroy(other.gameObject); // destroy the treat
         }
