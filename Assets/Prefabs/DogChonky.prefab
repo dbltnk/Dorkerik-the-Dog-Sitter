@@ -970,7 +970,14 @@ MonoBehaviour:
   TreatsLiked:
   - Cupcake
   ValueMultiplier: 5
+  awooSound: {fileID: 8300000, guid: 9dac997d68aa7391fb75720652818036, type: 3}
   barkSound: {fileID: 8300000, guid: 8d8d30154396257f7a3a07a8f6ad0440, type: 3}
+  chomppSound: {fileID: 8300000, guid: 6efbf9d36bdf08bdba73b5ca71127ffa, type: 3}
+  poopSound: {fileID: 0}
+  tippyTapsSound: {fileID: 0}
+  zoomiesSound: {fileID: 8300000, guid: 9c0865ec829ab2aae9d2168355c253ef, type: 3}
+  splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
+  angerySound: {fileID: 8300000, guid: 5a7eacc26baa5336887d3d7e137e51ca, type: 3}
 --- !u!114 &1554900261031642922
 MonoBehaviour:
   m_ObjectHideFlags: 0

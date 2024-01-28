@@ -42,7 +42,14 @@ public class DogMovement : MonoBehaviour
     private GameObject currentMesh;
 
     private AudioSource audioSource;
+    public AudioClip awooSound;
     public AudioClip barkSound;
+    public AudioClip chomppSound;
+    public AudioClip poopSound;
+    public AudioClip tippyTapsSound;
+    public AudioClip zoomiesSound;
+    public AudioClip splootSound;
+    public AudioClip angerySound;
 
 
     void Awake()
@@ -138,6 +145,7 @@ public class DogMovement : MonoBehaviour
             Happiness += 50;
             StartCoroutine(DisableRawImageAfterSeconds(3));
             Destroy(other.gameObject); // destroy the treat
+            audioSource.PlayOneShot(chomppSound);
         }
         else if (other.gameObject.tag == "Treat" && !TreatsLiked.Contains(other.gameObject.GetComponentInChildren<Treat>().Name))
         {
@@ -146,6 +154,7 @@ public class DogMovement : MonoBehaviour
             Happiness -= 25;
             StartCoroutine(DisableRawImageAfterSeconds(3));
             Destroy(other.gameObject); // destroy the treat
+            audioSource.PlayOneShot(angerySound);
         }
     }
 
@@ -195,6 +204,7 @@ public class DogMovement : MonoBehaviour
     {
         Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(0.5f, 0.75f));
         Instantiate(PoopPrefab, transform.position + randomOffset, Quaternion.identity);
+        audioSource.PlayOneShot(poopSound);
     }
 
     IEnumerator DisableRawImageAfterSeconds(float seconds)
@@ -210,6 +220,7 @@ public class DogMovement : MonoBehaviour
             case float n when (n < -75):
                 rawImage.enabled = true;
                 rawImage.texture = awooTexture;
+                audioSource.PlayOneShot(awooSound);
                 break;
             case float n when (n < -25):
                 rawImage.enabled = true;
@@ -219,10 +230,12 @@ public class DogMovement : MonoBehaviour
             case float n when (n > 25):
                 rawImage.enabled = true;
                 rawImage.texture = tippyTapsTexture;
+                audioSource.PlayOneShot(tippyTapsSound);
                 break;
             case float n when (n > 75):
                 rawImage.enabled = true;
                 rawImage.texture = zoomiesTexture;
+                audioSource.PlayOneShot(zoomiesSound);
                 break;
             default:
                 break;
