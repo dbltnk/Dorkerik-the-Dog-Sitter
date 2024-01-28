@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7762003376140530898}
   - component: {fileID: 7168659931138585743}
   m_Layer: 0
-  m_Name: TreatStick
+  m_Name: TreatBall
   m_TagString: Treat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7002043649004227994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d769ae9fb43db238476a4413a5f33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Stick
+  Name: Ball
 --- !u!1001 &1078472704592803875
 PrefabInstance:
   m_ObjectHideFlags: 0

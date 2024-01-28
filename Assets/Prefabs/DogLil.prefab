@@ -297,7 +297,7 @@ MonoBehaviour:
   chomppTexture: {fileID: 2800000, guid: f13dda9ea7cfff62a9b1ed897e3ea429, type: 3}
   Name: Lil' Pupper
   TreatsLiked:
-  - Apple
+  - Snaccs
   ValueMultiplier: 3
 --- !u!114 &1554900261031642922
 MonoBehaviour:
