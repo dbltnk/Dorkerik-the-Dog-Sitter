@@ -13,6 +13,12 @@ public class ShopUIManager : MonoBehaviour
     public GameObject PanelTabDogs;
     public GameObject PanelTabTreats;
     public GameObject PanelTabPlace;
+    private AudioSource audioSource;
+
+    public AudioClip clickSound;
+    public AudioClip buyPlaceSound;
+    public AudioClip buyDogSound;
+    public AudioClip buyTreatSound;
 
     [System.Serializable]
     public class Place
@@ -48,6 +54,11 @@ public class ShopUIManager : MonoBehaviour
     public List<Dog> Dogs;
     public List<Treat> Treats;
 
+    private void Awake()
+    {
+        audioSource = GetComponentInParent<AudioSource>();
+
+    }
 
     void Start()
     {
@@ -92,6 +103,7 @@ public class ShopUIManager : MonoBehaviour
 
                 // Update the button text and disable the button
                 place.Button.interactable = false;
+                audioSource.PlayOneShot(buyPlaceSound);
             }
         }
     }
@@ -110,6 +122,7 @@ public class ShopUIManager : MonoBehaviour
             float fixedY = 0.0f;
             Instantiate(dog.DogPrefab, new Vector3(randomX, fixedY, randomZ), Quaternion.identity, dogsParent.transform);
             dog.Bought = true;
+            audioSource.PlayOneShot(buyDogSound);
         }
     }
 
@@ -129,6 +142,7 @@ public class ShopUIManager : MonoBehaviour
             Quaternion randomRotation = Quaternion.Euler(0, randomYRotation, 0);
             Instantiate(treat.TreatPrefab, new Vector3(randomX, fixedY, randomZ), randomRotation, treatsParent.transform);
             treat.Bought = true;
+            audioSource.PlayOneShot(buyTreatSound);
         }
     }
 
@@ -143,6 +157,8 @@ public class ShopUIManager : MonoBehaviour
         TabDogs.interactable = false;
         TabTreats.interactable = true;
         TabPlace.interactable = true;
+
+        audioSource.PlayOneShot(clickSound);
     }
 
     public void TabTreatsClicked()
@@ -156,6 +172,8 @@ public class ShopUIManager : MonoBehaviour
         TabDogs.interactable = true;
         TabTreats.interactable = false;
         TabPlace.interactable = true;
+
+        audioSource.PlayOneShot(clickSound);
     }
 
     public void TabPlaceClicked()
@@ -169,5 +187,7 @@ public class ShopUIManager : MonoBehaviour
         TabDogs.interactable = true;
         TabTreats.interactable = true;
         TabPlace.interactable = false;
+
+        audioSource.PlayOneShot(clickSound);
     }
 }
