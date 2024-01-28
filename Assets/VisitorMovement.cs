@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class VisitorMovement : MonoBehaviour
 {
-    public float minMoveRange = 8f;
-    public float maxMoveRange = 24f;
+    private float minMoveRange = 8f;
+    private float maxMoveRange = 24f;
     private float moveRange;
 
-    public float moveInterval = 10f;
-    public float moveRandInterval = 2f;
-    public float minMoveSpeed = 3f;
-    public float maxMoveSpeed = 7f;
-    public float acceleration = 0.5f;
+    private float moveInterval = 10f;
+    private float moveRandInterval = 2f;
+    private float minMoveSpeed = 4f;
+    private float maxMoveSpeed = 6f;
+    private float acceleration = 0.5f;
 
     private float moveSpeed;
     private float currentSpeed = 0f;
@@ -21,7 +21,15 @@ public class VisitorMovement : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject HeartPrefab;
-    public float DogViewingRange;
+    private float DogViewingRange = 7.5f;
+
+    private float MinVisitDuration = 120f;
+    private float MaxVisitDuration = 180f;
+    private float ForceExitAfter = 60f;
+    private float VisitDuration;
+    public GameObject DoorExit;
+    private float exitTimer = 0f;
+    private bool isExiting = false;
 
     void Start()
     {
@@ -40,10 +48,32 @@ public class VisitorMovement : MonoBehaviour
         }
 
         InvokeRepeating("CheckHappiness", 5f, Random.Range(4f, 6f));
+
+        DoorExit = GameObject.Find("DoorExit");
+        VisitDuration = Random.Range(MinVisitDuration, MaxVisitDuration);
     }
 
     void Update()
     {
+        if (isExiting)
+        {
+            exitTimer += Time.deltaTime;
+            if (exitTimer >= ForceExitAfter || Vector3.Distance(transform.position, DoorExit.transform.position) <= 2f)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            targetPosition = DoorExit.transform.position;
+        }
+        else
+        {
+            VisitDuration -= Time.deltaTime;
+            if (VisitDuration <= 0f)
+            {
+                isExiting = true;
+            }
+        }
+
         float step = currentSpeed * Time.deltaTime;
         Vector3 moveDirection = (targetPosition - transform.position).normalized;
         RaycastHit hit;

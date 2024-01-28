@@ -6,8 +6,8 @@ using UnityEngine;
 public class VisitorSpawner : MonoBehaviour
 {
     public GameObject visitorPrefab;
-    public float spawnIntervalMin = 1.0f;
-    public float spawnIntervalMax = 3.0f;
+    private float spawnIntervalMin = 2f;
+    private float spawnIntervalMax = 4f;
 
     void Start()
     {
