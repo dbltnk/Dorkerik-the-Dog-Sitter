@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VisitorMovement : MonoBehaviour
@@ -121,6 +122,13 @@ public class VisitorMovement : MonoBehaviour
 
     private IEnumerator CoCheckHappiness()
     {
+
+        if (Scorer.Instance.GetMoney() < 10)
+        {
+            Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            yield return null;
+        }
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, DogViewingRange);
         //Debug.Log("Number of colliders detected: " + colliders.Length);
         float totalHappiness = 0;
