@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Security.Cryptography.X509Certificates;
 
 public class ShopUIManager : MonoBehaviour
 {
@@ -123,7 +124,11 @@ public class ShopUIManager : MonoBehaviour
         if (success)
         {
             GameObject dogsParent = GameObject.Find("Dogs");
-            Instantiate(dog.DogPrefab, new Vector3(-0.49000001f, 0.17f, 1.55999994f), Quaternion.identity, dogsParent.transform);
+            System.Random rand = new System.Random();
+            float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
+            float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
+            float fixedY = 0.0f;
+            Instantiate(dog.DogPrefab, new Vector3(randomX, fixedY, randomZ), Quaternion.identity, dogsParent.transform);
             dog.Bought = true;
         }
     }
@@ -136,7 +141,11 @@ public class ShopUIManager : MonoBehaviour
         if (success)
         {
             GameObject treatsParent = GameObject.Find("Treats");
-            Instantiate(treat.TreatPrefab, treatsParent.transform.position, Quaternion.identity, treatsParent.transform);
+            System.Random rand = new System.Random();
+            float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
+            float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
+            float fixedY = 5.0f;
+            Instantiate(treat.TreatPrefab, new Vector3(randomX, fixedY, randomZ), Quaternion.identity, treatsParent.transform);
             treat.Bought = true;
         }
     }

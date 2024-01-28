@@ -122,19 +122,19 @@ public class VisitorMovement : MonoBehaviour
     private IEnumerator CoCheckHappiness()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, DogViewingRange);
-        //Debug.Log("Number of colliders detected: " + colliders.Length);
+        Debug.Log("Number of colliders detected: " + colliders.Length);
         float totalHappiness = 0;
         foreach (Collider collider in colliders)
         {
             if (collider.CompareTag("Dog"))
             {
-                float happiness = collider.GetComponent<DogMovement>().Happiness;
-                //Debug.Log("Dog detected with happiness: " + happiness);
-                totalHappiness += happiness * collider.GetComponent<DogMovement>().ValueMultiplier;
+                float happiness = collider.transform.parent.parent.GetComponent<DogMovement>().Happiness;
+                Debug.Log("Dog detected with happiness: " + happiness);
+                totalHappiness += happiness * collider.transform.parent.parent.GetComponent<DogMovement>().ValueMultiplier;
             }
         }
 
-        //Debug.Log("Total happiness: " + totalHappiness);
+        Debug.Log("Total happiness: " + totalHappiness);
 
         if (totalHappiness > 0)
         {

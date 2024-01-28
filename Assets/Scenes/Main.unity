@@ -11556,27 +11556,27 @@ MonoBehaviour:
     Bought: 0
     Name: Smol Boi
   - Button: {fileID: 1481598814}
-    DogPrefab: {fileID: 5928087351302878577, guid: b1beb4732612a5f2ba7f27a096197f13, type: 3}
+    DogPrefab: {fileID: 5928087351302878577, guid: 6ce7b2ad1a53146e89b824f773ae0c62, type: 3}
     Price: 30
     Bought: 0
     Name: Good Boy
   - Button: {fileID: 168678808}
-    DogPrefab: {fileID: 5928087351302878577, guid: 4d9b1e6e95202dbff92e4c0ed2d2d6d3, type: 3}
+    DogPrefab: {fileID: 5928087351302878577, guid: 1480682acc223f0ce95db92d17d21e92, type: 3}
     Price: 50
     Bought: 0
     Name: Lil' Pupper
   - Button: {fileID: 299117600}
-    DogPrefab: {fileID: 5928087351302878577, guid: 8bc182d1ec1b6681ab7aff8cddc9ad06, type: 3}
+    DogPrefab: {fileID: 5928087351302878577, guid: f38d2f7dfd30284a5adef1be1ab03454, type: 3}
     Price: 100
     Bought: 0
     Name: Looong Boi
   - Button: {fileID: 1661470986}
-    DogPrefab: {fileID: 5928087351302878577, guid: 7a0f9dcdd389c2298b09a73879dbba17, type: 3}
+    DogPrefab: {fileID: 5928087351302878577, guid: 876109e92cf1fc95bb7e6a053cb32d75, type: 3}
     Price: 200
     Bought: 0
     Name: Chonky Boi
   - Button: {fileID: 718163702}
-    DogPrefab: {fileID: 5928087351302878577, guid: 1e3d0df97a7f1474d8817eee92587492, type: 3}
+    DogPrefab: {fileID: 5928087351302878577, guid: 49f261b9ce88a8b45817ed7f05a5e5ed, type: 3}
     Price: 500
     Bought: 0
     Name: Scruffy Boi

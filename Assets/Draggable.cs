@@ -29,20 +29,28 @@ public class Draggable : MonoBehaviour
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(mouseRay, out hit) && hit.collider == objectCollider)
+
+            // Get all colliders in the object
+            Collider[] colliders = GetComponentsInChildren<Collider>();
+
+            foreach (var objectCollider in colliders)
             {
-                // Add a distance check here
-                float distanceToCollider = Vector3.Distance(hit.point, objectCollider.transform.position);
-                if (distanceToCollider <= someThreshold) // Replace someThreshold with a suitable value
+                if (Physics.Raycast(mouseRay, out hit) && hit.collider == objectCollider)
                 {
-                    //Debug.Log("Started dragging");
-                    isDragging = true;
-                    originalPosition = transform.position;
-                    originalScale = transform.localScale;
-                    transform.localScale = draggingScale;
-                    objectCollider.enabled = false; // Disable the collider
-                    //Debug.Log("Original position: " + originalPosition);
-                    //Debug.Log("Original scale: " + originalScale);
+                    // Add a distance check here
+                    float distanceToCollider = Vector3.Distance(hit.point, objectCollider.transform.position);
+                    if (distanceToCollider <= someThreshold) // Replace someThreshold with a suitable value
+                    {
+                        Debug.Log("Started dragging");
+                        isDragging = true;
+                        originalPosition = transform.position;
+                        originalScale = transform.localScale;
+                        transform.localScale = draggingScale;
+                        objectCollider.enabled = false; // Disable the collider
+                        Debug.Log("Original position: " + originalPosition);
+                        Debug.Log("Original scale: " + originalScale);
+                        break; // Exit the loop once a collider is found
+                    }
                 }
             }
         }
@@ -62,10 +70,21 @@ public class Draggable : MonoBehaviour
             //Debug.Log("Stopped dragging");
             isDragging = false;
             transform.localScale = originalScale;
-            objectCollider.enabled = true; // Enable the collider
+            Collider[] colliders = GetComponentsInChildren<Collider>(true);
+            foreach (var objectCollider in colliders)
+            {
+                objectCollider.enabled = true; // Enable the collider
+            }
             //Debug.Log("Restored position: " + transform.position);
             //Debug.Log("Restored scale: " + transform.localScale);
             transform.position = new Vector3(transform.position.x, originalPosition.y, transform.position.z);
+
+            // get the DogMovement component and if it is not null then call the PickNewTarget function
+            DogMovement dogMovement = GetComponent<DogMovement>();
+            if (dogMovement != null)
+            {
+                dogMovement.PickNewTarget();
+            }
         }
     }
 }

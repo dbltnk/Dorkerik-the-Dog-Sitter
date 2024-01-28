@@ -9,8 +9,8 @@ public class DogMovement : MonoBehaviour
     public float maxMoveRange = 6f;
     private float moveRange;
 
-    public float moveInterval = 5f;
-    public float moveRandInterval = 1f;
+    public float moveInterval = 3f;
+    public float moveRandInterval = 1.5f;
     public float minMoveSpeed = 4f;
     public float maxMoveSpeed = 6f;
     public float acceleration = 0.5f;
@@ -41,10 +41,17 @@ public class DogMovement : MonoBehaviour
     public float ValueMultiplier;
 
     private Draggable draggable;
-    private MeshFilter meshFilter;
-    private Mesh originalMesh;
-    public Mesh ween_medium_airjail;
 
+    private Transform meshesTransform;
+    private GameObject currentMesh;
+
+
+    void Awake()
+    {
+        draggable = GetComponentInChildren<Draggable>();
+        meshesTransform = transform.Find("Meshes");
+        currentMesh = meshesTransform.Find("ween_medium_static").gameObject;
+    }
 
     void Start()
     {
@@ -57,40 +64,30 @@ public class DogMovement : MonoBehaviour
         rb.useGravity = false;
         PickNewTarget();
         InvokeRepeating("PickNewTarget", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
-
-        // Scale the object randomly
-        //float scaleX = Random.Range(0.4f, 0.6f);
-        //float scaleY = Random.Range(0.4f, 0.6f);
-        //float scaleZ = Random.Range(0.4f, 0.6f);
-        //transform.localScale = new Vector3(scaleX, scaleY, scaleZ);
-
-        // Set a random color
-        Renderer renderer = transform.Find("Capsule").GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            float r = Random.Range(0.4f, 0.6f);
-            float g = Random.Range(0.2f, 0.3f);
-            float b = 0;
-            renderer.material.color = new Color(r, g, b);
-        }
-
         InvokeRepeating("Poop", Random.Range(10f, 15f), Random.Range(16f, 21f));
         InvokeRepeating("Bark", Random.Range(9f, 11f), Random.Range(9f, 11f));
-
-        draggable = GetComponentInChildren<Draggable>();
-        meshFilter = GetComponentInChildren<MeshFilter>();
-        originalMesh = meshFilter.mesh;
     }
 
     void Update()
     {
+        Transform meshesTransform = transform.Find("Meshes");
+
         if (draggable.isDragging)
         {
-            meshFilter.mesh = ween_medium_airjail;
-        }
-        else
-        {
-            meshFilter.mesh = originalMesh;
+            for (int i = 0; i < meshesTransform.childCount; i++)
+            {
+                Transform child = meshesTransform.GetChild(i);
+
+                // If the child's name is not "ween_medium_airjail", disable it
+                if (child.name == "ween_medium_airjail")
+                {
+                    child.gameObject.SetActive(true);
+                }
+                else
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
         }
 
         Vector3 moveDirection = (targetPosition - transform.position).normalized;
@@ -103,8 +100,8 @@ public class DogMovement : MonoBehaviour
         }
 
         // Rotate towards the target direction
-        Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 / 3 * Time.deltaTime);
+        //Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 / 3 * Time.deltaTime);
 
         // Move towards the target position
         float step = currentSpeed * Time.deltaTime;
@@ -185,16 +182,46 @@ public class DogMovement : MonoBehaviour
         PickNewTarget();
     }
 
-    void PickNewTarget()
+    public void PickNewTarget()
     {
-        moveRange = Random.Range(minMoveRange, maxMoveRange); // Pick a random move range
-        targetPosition = new Vector3(
-            transform.position.x + Random.Range(-moveRange, moveRange),
-            yPos,
-            transform.position.z + Random.Range(-moveRange, moveRange)
-        );
-        moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed); // Pick a random move speed
-        currentSpeed = 0; // Reset speed when a new target is picked
+        if (draggable.isDragging)
+        {
+            return;
+        }
+
+        int childCount = meshesTransform.childCount;
+        System.Random rand = new System.Random();
+        int randomIndex = rand.Next(childCount);
+
+        bool isAnyChildActive = false;
+
+        // i = 1 to skip airchail, the first child
+        for (int i = 1; i < childCount; i++)
+        {
+            Transform child = meshesTransform.GetChild(i);
+            if (i == randomIndex)
+            {
+                child.gameObject.SetActive(true);
+                isAnyChildActive = true;
+            }
+            else
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+
+        // If no child is active, manually activate the first one (or any other you prefer)
+        if (!isAnyChildActive && childCount > 1)
+        {
+            meshesTransform.GetChild(1).gameObject.SetActive(true);
+        }
+
+        // disable airjail
+        meshesTransform.GetChild(0).gameObject.SetActive(false);
+
+        // Pick a random y rotation for the object
+        float randomYRotation = UnityEngine.Random.Range(0f, 360f);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, randomYRotation, transform.eulerAngles.z);
     }
 
     void Poop()
