@@ -125,7 +125,9 @@ public class ShopUIManager : MonoBehaviour
             float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
             float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
             float fixedY = 5.0f;
-            Instantiate(treat.TreatPrefab, new Vector3(randomX, fixedY, randomZ), Quaternion.identity, treatsParent.transform);
+            float randomYRotation = Random.Range(0f, 360f);
+            Quaternion randomRotation = Quaternion.Euler(0, randomYRotation, 0);
+            Instantiate(treat.TreatPrefab, new Vector3(randomX, fixedY, randomZ), randomRotation, treatsParent.transform);
             treat.Bought = true;
         }
     }
