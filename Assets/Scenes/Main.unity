@@ -9372,7 +9372,7 @@ MonoBehaviour:
   PanelTabTreats: {fileID: 905851481}
   PanelTabPlace: {fileID: 459211210}
   clickSound: {fileID: 8300000, guid: e50995e687cb535b29390ca61d0560dd, type: 3}
-  buyPlaceSound: {fileID: 0}
+  buyPlaceSound: {fileID: 8300000, guid: d19cbab2f544bdc309df6404bd479084, type: 3}
   buyDogSound: {fileID: 8300000, guid: f99deda78df291edb870fd4854ee537a, type: 3}
   buyTreatSound: {fileID: 8300000, guid: d19cbab2f544bdc309df6404bd479084, type: 3}
   Places:

@@ -150,8 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDragging: 0
   splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
-  liftSound: {fileID: 0}
-  dropSound: {fileID: 0}
+  liftSound: {fileID: 8300000, guid: 4b373a94afa48a0e2ba3e7fed60297f4, type: 3}
+  dropSound: {fileID: 8300000, guid: 4b373a94afa48a0e2ba3e7fed60297f4, type: 3}
   trashSound: {fileID: 8300000, guid: e1a684bf20931ddeab9931e039c06f67, type: 3}
 --- !u!82 &8745302913919738109
 AudioSource:

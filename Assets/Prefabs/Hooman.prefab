@@ -127,7 +127,7 @@ MonoBehaviour:
   HeartPrefab: {fileID: 4761822417820374, guid: 3d1a91f5fac7ee6aea7dcd44d8746bf9, type: 3}
   DoorExit: {fileID: 0}
   leaveSound: {fileID: 8300000, guid: f867ee1de272d2bf5a791b9ffa8c8f97, type: 3}
-  moneySound: {fileID: 0}
+  moneySound: {fileID: 8300000, guid: 113900bd80bc68942a37dfc32e97ff38, type: 3}
 --- !u!54 &6726902280134621169
 Rigidbody:
   m_ObjectHideFlags: 0

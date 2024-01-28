@@ -993,7 +993,7 @@ MonoBehaviour:
   isDragging: 0
   splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
   liftSound: {fileID: 8300000, guid: 08bd75f6196f6e3b9ab6776c9251e90d, type: 3}
-  dropSound: {fileID: 0}
+  dropSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
   trashSound: {fileID: 8300000, guid: e1a684bf20931ddeab9931e039c06f67, type: 3}
 --- !u!82 &8986796315637445349
 AudioSource:
