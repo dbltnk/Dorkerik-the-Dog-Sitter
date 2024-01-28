@@ -57,14 +57,8 @@ public class ShopUIManager : MonoBehaviour
             place.Button.GetComponentInChildren<TMP_Text>().text = $"{place.Name} ({place.Price})";
         }
 
-        for (int i = 0; i < Treats.Count; i++)
-        {
-            Treat treat = Treats[i];
-            treat.Button.GetComponentInChildren<TMP_Text>().text = $"{treat.Name} ({treat.Price})";
-        }
-
         // Set default active tab and panel
-        TabPlaceClicked();
+        TabDogsClicked();
     }
 
     void Update()
