@@ -69,7 +69,7 @@ public class DogMovement : MonoBehaviour
             renderer.material.color = new Color(r, g, b);
         }
 
-        InvokeRepeating("Poop", Random.Range(3f, 9f), Random.Range(3f, 9f));
+        InvokeRepeating("Poop", Random.Range(10f, 15f), Random.Range(16f, 21f));
         InvokeRepeating("Bark", Random.Range(9f, 11f), Random.Range(9f, 11f));
     }
 
