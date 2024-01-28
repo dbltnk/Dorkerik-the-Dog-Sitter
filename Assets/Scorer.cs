@@ -22,13 +22,13 @@ public class Scorer : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        scoreText.text = "Money: $" + CurrentMoney;
+        scoreText.text = CurrentMoney.ToString();
     }
 
     public void AddMoney()
     {
         CurrentMoney += 1;
-        scoreText.text = "Money: $" + CurrentMoney;
+        scoreText.text = CurrentMoney.ToString();
     }
 
     public int GetMoney()
@@ -41,7 +41,7 @@ public class Scorer : MonoBehaviour
         if (CurrentMoney >= amount)
         {
             CurrentMoney -= amount;
-            scoreText.text = "Money: $" + CurrentMoney;
+            scoreText.text = CurrentMoney.ToString();
             return true;
         }
         else

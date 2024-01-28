@@ -88,7 +88,7 @@ public class Draggable : MonoBehaviour
             DogMovement dogMovement = GetComponent<DogMovement>();
             if (dogMovement != null)
             {
-                dogMovement.PickNewTarget();
+                dogMovement.ChangeVisual();
             }
 
             if (IsMouseOverTrashPanel())

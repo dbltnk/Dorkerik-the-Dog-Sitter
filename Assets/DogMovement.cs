@@ -15,10 +15,6 @@ public class DogMovement : MonoBehaviour
     public float maxMoveSpeed = 6f;
     public float acceleration = 0.5f;
 
-    private float moveSpeed;
-    private float currentSpeed = 0f;
-    private float yPos;
-    private Vector3 targetPosition;
     private Rigidbody rb;
 
     public GameObject PoopPrefab;
@@ -58,12 +54,11 @@ public class DogMovement : MonoBehaviour
         // find a RawImage component in any child
         rawImage = GetComponentInChildren<RawImage>();
 
-        yPos = transform.position.y;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         rb.useGravity = false;
-        PickNewTarget();
-        InvokeRepeating("PickNewTarget", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
+        ChangeVisual();
+        InvokeRepeating("ChangeVisual", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
         InvokeRepeating("Poop", Random.Range(10f, 15f), Random.Range(16f, 21f));
         InvokeRepeating("Bark", Random.Range(9f, 11f), Random.Range(9f, 11f));
     }
@@ -88,33 +83,6 @@ public class DogMovement : MonoBehaviour
                     child.gameObject.SetActive(false);
                 }
             }
-        }
-
-        Vector3 moveDirection = (targetPosition - transform.position).normalized;
-        RaycastHit hit;
-        float bufferDistance = Random.Range(0.5f, 1f);
-        if (Physics.Raycast(transform.position, moveDirection, out hit, currentSpeed * Time.deltaTime + bufferDistance))
-        {
-            PickNewTarget();
-            return;
-        }
-
-        // Rotate towards the target direction
-        //Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 / 3 * Time.deltaTime);
-
-        // Move towards the target position
-        float step = currentSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
-
-        // Accelerate when moving towards the target, decelerate when reached the target
-        if (transform.position != targetPosition)
-        {
-            currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.deltaTime, moveSpeed);
-        }
-        else
-        {
-            currentSpeed = Mathf.Max(currentSpeed - acceleration * Time.deltaTime, 0);
         }
 
         CalculateHappiness();
@@ -177,12 +145,7 @@ public class DogMovement : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        PickNewTarget();
-    }
-
-    public void PickNewTarget()
+    public void ChangeVisual()
     {
         if (draggable.isDragging)
         {
