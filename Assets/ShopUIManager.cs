@@ -51,13 +51,6 @@ public class ShopUIManager : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < Places.Count; i++)
-        {
-            Place place = Places[i];
-            place.Button.GetComponentInChildren<TMP_Text>().text = $"{place.Name} ({place.Price})";
-        }
-
-        // Set default active tab and panel
         TabDogsClicked();
     }
 
@@ -98,7 +91,6 @@ public class ShopUIManager : MonoBehaviour
                 place.Bought = true;
 
                 // Update the button text and disable the button
-                place.Button.GetComponentInChildren<TMP_Text>().text = "Bought";
                 place.Button.interactable = false;
             }
         }
