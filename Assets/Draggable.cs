@@ -41,14 +41,14 @@ public class Draggable : MonoBehaviour
                     float distanceToCollider = Vector3.Distance(hit.point, objectCollider.transform.position);
                     if (distanceToCollider <= someThreshold) // Replace someThreshold with a suitable value
                     {
-                        Debug.Log("Started dragging");
+                        //Debug.Log("Started dragging");
                         isDragging = true;
                         originalPosition = transform.position;
                         originalScale = transform.localScale;
                         transform.localScale = draggingScale;
                         objectCollider.enabled = false; // Disable the collider
-                        Debug.Log("Original position: " + originalPosition);
-                        Debug.Log("Original scale: " + originalScale);
+                        //Debug.Log("Original position: " + originalPosition);
+                        //Debug.Log("Original scale: " + originalScale);
                         break; // Exit the loop once a collider is found
                     }
                 }
