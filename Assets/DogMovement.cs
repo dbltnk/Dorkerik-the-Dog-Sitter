@@ -41,12 +41,16 @@ public class DogMovement : MonoBehaviour
     private Transform meshesTransform;
     private GameObject currentMesh;
 
+    private AudioSource audioSource;
+    public AudioClip barkSound;
+
 
     void Awake()
     {
         draggable = GetComponentInChildren<Draggable>();
         meshesTransform = transform.Find("Meshes");
         currentMesh = meshesTransform.Find("ween_medium_static").gameObject;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -210,6 +214,7 @@ public class DogMovement : MonoBehaviour
             case float n when (n < -25):
                 rawImage.enabled = true;
                 rawImage.texture = borkBorkTexture;
+                audioSource.PlayOneShot(barkSound);
                 break;
             case float n when (n > 25):
                 rawImage.enabled = true;
