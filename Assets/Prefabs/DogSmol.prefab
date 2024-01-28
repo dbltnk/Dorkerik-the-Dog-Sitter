@@ -991,6 +991,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDragging: 0
+  splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
+  liftSound: {fileID: 0}
+  dropSound: {fileID: 0}
+  trashSound: {fileID: 8300000, guid: e1a684bf20931ddeab9931e039c06f67, type: 3}
 --- !u!82 &-294446455382662174
 AudioSource:
   m_ObjectHideFlags: 0

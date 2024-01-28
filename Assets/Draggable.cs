@@ -15,6 +15,18 @@ public class Draggable : MonoBehaviour
     private Collider objectCollider; // Reference to the object's collider
     private float someThreshold = 3f;
     private RectTransform trashPanel;
+    private AudioSource audioSource;
+
+    public AudioClip splootSound;
+    public AudioClip liftSound;
+    public AudioClip dropSound;
+    public AudioClip trashSound;
+
+
+    private void Awake()
+    {
+        audioSource = GetComponentInParent<AudioSource>();
+    }
 
 
     void Start()
@@ -54,6 +66,7 @@ public class Draggable : MonoBehaviour
                         objectCollider.enabled = false; // Disable the collider
                         //Debug.Log("Original position: " + originalPosition);
                         //Debug.Log("Original scale: " + originalScale);
+                        audioSource.PlayOneShot(liftSound);
                         break; // Exit the loop once a collider is found
                     }
                 }
@@ -89,10 +102,16 @@ public class Draggable : MonoBehaviour
             if (dogMovement != null)
             {
                 dogMovement.ChangeVisual();
+                audioSource.PlayOneShot(splootSound);
+            }
+            else
+            {
+                audioSource.PlayOneShot(dropSound);
             }
 
             if (IsMouseOverTrashPanel())
             {
+                audioSource.PlayOneShot(trashSound);
                 Destroy(gameObject);
             }
         }

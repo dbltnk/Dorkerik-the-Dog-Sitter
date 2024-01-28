@@ -32,6 +32,15 @@ public class VisitorMovement : MonoBehaviour
     private float exitTimer = 0f;
     private bool isExiting = false;
 
+    private AudioSource audioSource;
+    public AudioClip leaveSound;
+    public AudioClip moneySound;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         yPos = transform.position.y;
@@ -61,6 +70,7 @@ public class VisitorMovement : MonoBehaviour
             exitTimer += Time.deltaTime;
             if (exitTimer >= ForceExitAfter || Vector3.Distance(transform.position, DoorExit.transform.position) <= 2f)
             {
+                audioSource.PlayOneShot(leaveSound);
                 Destroy(gameObject);
                 return;
             }
@@ -152,6 +162,7 @@ public class VisitorMovement : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.15f);
                 //Debug.Log("Instantiating heart prefab due to positive total happiness.");
+                audioSource.PlayOneShot(moneySound);
                 Instantiate(HeartPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
             }
         }
