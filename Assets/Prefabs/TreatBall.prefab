@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDragging: 0
   splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
-  liftSound: {fileID: 0}
+  liftSound: {fileID: 8300000, guid: 6ad57971b7e44c9ff9be27844ef9e83c, type: 3}
   dropSound: {fileID: 0}
   trashSound: {fileID: 8300000, guid: e1a684bf20931ddeab9931e039c06f67, type: 3}
 --- !u!114 &7168659931138585743

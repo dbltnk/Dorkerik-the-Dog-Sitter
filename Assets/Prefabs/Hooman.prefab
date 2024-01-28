@@ -126,6 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HeartPrefab: {fileID: 4761822417820374, guid: 3d1a91f5fac7ee6aea7dcd44d8746bf9, type: 3}
   DoorExit: {fileID: 0}
+  leaveSound: {fileID: 8300000, guid: f867ee1de272d2bf5a791b9ffa8c8f97, type: 3}
+  moneySound: {fileID: 0}
 --- !u!54 &6726902280134621169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,8 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDragging: 0
   splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
-  liftSound: {fileID: 0}
-  dropSound: {fileID: 0}
+  liftSound: {fileID: 8300000, guid: 79ae8bc5384b91321a5b8a4fff2f0ec8, type: 3}
+  dropSound: {fileID: 8300000, guid: 98d39a45bb23e086eb8096ce0ce2e4f7, type: 3}
   trashSound: {fileID: 8300000, guid: e1a684bf20931ddeab9931e039c06f67, type: 3}
 --- !u!82 &-8068840172251212720
 AudioSource:

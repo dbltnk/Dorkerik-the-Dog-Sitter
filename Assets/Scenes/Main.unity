@@ -615,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visitorPrefab: {fileID: 5928087351302878577, guid: ae9fcb91c63974688ba0ba136804379d, type: 3}
+  spawnSound: {fileID: 8300000, guid: b4152c27e325878ef99c2d495f126c1b, type: 3}
 --- !u!82 &118796500
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9370,7 +9371,7 @@ MonoBehaviour:
   PanelTabDogs: {fileID: 1069640189}
   PanelTabTreats: {fileID: 905851481}
   PanelTabPlace: {fileID: 459211210}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: e50995e687cb535b29390ca61d0560dd, type: 3}
   buyPlaceSound: {fileID: 0}
   buyDogSound: {fileID: 8300000, guid: f99deda78df291edb870fd4854ee537a, type: 3}
   buyTreatSound: {fileID: 8300000, guid: d19cbab2f544bdc309df6404bd479084, type: 3}

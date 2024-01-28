@@ -974,7 +974,7 @@ MonoBehaviour:
   barkSound: {fileID: 8300000, guid: 8d8d30154396257f7a3a07a8f6ad0440, type: 3}
   chomppSound: {fileID: 8300000, guid: 6efbf9d36bdf08bdba73b5ca71127ffa, type: 3}
   poopSound: {fileID: 8300000, guid: 1a80d59fae33294b6998357c5060da8d, type: 3}
-  tippyTapsSound: {fileID: 0}
+  tippyTapsSound: {fileID: 8300000, guid: f40ff7f74a551b7638401890abd5ee6e, type: 3}
   zoomiesSound: {fileID: 8300000, guid: 9c0865ec829ab2aae9d2168355c253ef, type: 3}
   splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
   angerySound: {fileID: 8300000, guid: 5a7eacc26baa5336887d3d7e137e51ca, type: 3}
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDragging: 0
   splootSound: {fileID: 8300000, guid: 16f54c106b372158e9c6348f2291458d, type: 3}
-  liftSound: {fileID: 0}
+  liftSound: {fileID: 8300000, guid: 08bd75f6196f6e3b9ab6776c9251e90d, type: 3}
   dropSound: {fileID: 0}
   trashSound: {fileID: 8300000, guid: e1a684bf20931ddeab9931e039c06f67, type: 3}
 --- !u!82 &8986796315637445349
