@@ -57,12 +57,6 @@ public class ShopUIManager : MonoBehaviour
             place.Button.GetComponentInChildren<TMP_Text>().text = $"{place.Name} ({place.Price})";
         }
 
-        for (int i = 0; i < Dogs.Count; i++)
-        {
-            Dog dog = Dogs[i];
-            dog.Button.GetComponentInChildren<TMP_Text>().text = $"{dog.Name} ({dog.Price})";
-        }
-
         for (int i = 0; i < Treats.Count; i++)
         {
             Treat treat = Treats[i];
