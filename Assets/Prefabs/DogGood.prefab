@@ -299,6 +299,7 @@ MonoBehaviour:
   TreatsLiked:
   - Bone
   ValueMultiplier: 2
+  ween_medium_airjail: {fileID: 7519107077313017363, guid: 69858705cc92a2141bcf943d74dbf174, type: 3}
 --- !u!114 &1554900261031642922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c169b4a9c8166baac339e4d0d0291d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
 --- !u!1 &6133103547660282503
 GameObject:
   m_ObjectHideFlags: 0

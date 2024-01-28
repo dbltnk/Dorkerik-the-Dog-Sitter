@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
-    private bool isDragging = false;
+    public bool isDragging = false;
     private Vector3 originalPosition;
     private Vector3 originalScale;
     private Vector3 draggingScale = new Vector3(3f, 3f, 3f);

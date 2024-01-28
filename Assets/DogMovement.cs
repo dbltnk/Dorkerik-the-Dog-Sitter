@@ -40,6 +40,11 @@ public class DogMovement : MonoBehaviour
 
     public float ValueMultiplier;
 
+    private Draggable draggable;
+    private MeshFilter meshFilter;
+    private Mesh originalMesh;
+    public Mesh ween_medium_airjail;
+
 
     void Start()
     {
@@ -71,10 +76,23 @@ public class DogMovement : MonoBehaviour
 
         InvokeRepeating("Poop", Random.Range(10f, 15f), Random.Range(16f, 21f));
         InvokeRepeating("Bark", Random.Range(9f, 11f), Random.Range(9f, 11f));
+
+        draggable = GetComponentInChildren<Draggable>();
+        meshFilter = GetComponentInChildren<MeshFilter>();
+        originalMesh = meshFilter.mesh;
     }
 
     void Update()
     {
+        if (draggable.isDragging)
+        {
+            meshFilter.mesh = ween_medium_airjail;
+        }
+        else
+        {
+            meshFilter.mesh = originalMesh;
+        }
+
         Vector3 moveDirection = (targetPosition - transform.position).normalized;
         RaycastHit hit;
         float bufferDistance = Random.Range(0.5f, 1f);
