@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Draggable : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Draggable : MonoBehaviour
     private Plane groundPlane;
     private Collider objectCollider; // Reference to the object's collider
     private float someThreshold = 3f;
+    private RectTransform trashPanel;
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class Draggable : MonoBehaviour
         groundPlane = new Plane(Vector3.up, groundPoint);
 
         objectCollider = GetComponent<Collider>(); // Get the object's collider
+
+        trashPanel = GameObject.Find("PanelTrash").GetComponent<RectTransform>();
     }
 
     void Update()
@@ -59,13 +63,24 @@ public class Draggable : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && isDragging)
         {
-            //Debug.Log("Stopped dragging");
             isDragging = false;
             transform.localScale = originalScale;
             objectCollider.enabled = true; // Enable the collider
-            //Debug.Log("Restored position: " + transform.position);
-            //Debug.Log("Restored scale: " + transform.localScale);
-            transform.position = new Vector3(transform.position.x, originalPosition.y, transform.position.z);
+
+            if (IsMouseOverTrashPanel())
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, originalPosition.y, transform.position.z);
+            }
         }
+    }
+
+    private bool IsMouseOverTrashPanel()
+    {
+        Vector2 localMousePosition = trashPanel.InverseTransformPoint(Input.mousePosition);
+        return trashPanel.rect.Contains(localMousePosition);
     }
 }
