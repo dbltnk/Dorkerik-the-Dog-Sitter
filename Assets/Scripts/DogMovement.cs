@@ -202,7 +202,7 @@ public class DogMovement : MonoBehaviour
 
     void Poop()
     {
-        Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), Random.Range(0.5f, 0.75f));
+        Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), 1.5f, Random.Range(0.5f, 0.75f));
         Instantiate(PoopPrefab, transform.position + randomOffset, Quaternion.identity);
         audioSource.PlayOneShot(poopSound);
     }
