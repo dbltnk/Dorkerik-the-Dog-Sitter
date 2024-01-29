@@ -111,10 +111,17 @@ public class Draggable : MonoBehaviour
 
             if (IsMouseOverTrashPanel())
             {
-                audioSource.PlayOneShot(trashSound);
-                Destroy(gameObject);
+                StartCoroutine(CoDestroyButWithSound());
             }
         }
+    }
+
+    IEnumerator CoDestroyButWithSound()
+    {
+        gameObject.transform.position = new Vector3(-100f, -100f, -100f);
+        audioSource.PlayOneShot(trashSound);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     private bool IsMouseOverTrashPanel()
