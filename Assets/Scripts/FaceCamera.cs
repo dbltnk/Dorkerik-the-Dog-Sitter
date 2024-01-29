@@ -1,20 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FaceCamera : MonoBehaviour
 {
-    private Camera mainCamera;
 
     void Start()
     {
-        mainCamera = Camera.main; // Get the main camera
-    }
-
-    void Update()
-    {
-        // Rotate the canvas to face the camera
-        if (mainCamera != null)
-        {
-            transform.rotation = Quaternion.LookRotation(transform.position - mainCamera.transform.position);
-        }
+        // find the rawimage component
+        RawImage rawImage = GetComponentInChildren<RawImage>();
+        // set rotation to 60 0 0
+        rawImage.transform.rotation = Quaternion.Euler(60, 0, 0);
     }
 }

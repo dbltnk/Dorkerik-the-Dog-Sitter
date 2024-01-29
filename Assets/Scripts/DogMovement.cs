@@ -197,7 +197,7 @@ public class DogMovement : MonoBehaviour
 
         // Pick a random y rotation for the object
         float randomYRotation = UnityEngine.Random.Range(0f, 360f);
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, randomYRotation, transform.eulerAngles.z);
+        transform.Find("Meshes").transform.eulerAngles = new Vector3(transform.eulerAngles.x, randomYRotation, transform.eulerAngles.z);
     }
 
     void Poop()
