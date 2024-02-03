@@ -70,8 +70,8 @@ public class DogMovement : MonoBehaviour
         rb.useGravity = false;
         ChangeVisual();
         InvokeRepeating("ChangeVisual", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
-        InvokeRepeating("Poop", Random.Range(10f, 15f), Random.Range(16f, 21f));
-        InvokeRepeating("Bark", Random.Range(9f, 11f), Random.Range(9f, 11f));
+        InvokeRepeating("Poop", Random.Range(5f, 7f), Random.Range(8f, 10f));
+        InvokeRepeating("Bark", Random.Range(5f, 7f), Random.Range(8f, 10f));
     }
 
     void Update()
@@ -101,12 +101,11 @@ public class DogMovement : MonoBehaviour
 
     private void CalculateHappiness()
     {
-        // Happiness decreases for every poop and other dog or hooman that is within a radius of 5f
         int numDogsWithinRadius = 0;
         int numPoopsWithinRadius = 0;
         int numHoomansWithinRadius = 0;
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 5f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 3f);
         foreach (Collider collider in colliders)
         {
             if (collider.gameObject.tag == "Dog")
@@ -124,16 +123,14 @@ public class DogMovement : MonoBehaviour
             }
         }
 
-        float weightPoops = 0.5f;
+        float weightPoops = 5f;
         float weightDogs = 1f;
-        float weightHoomans = 0.1f;
+        float weightHoomans = 0.5f;
 
         float happinessDecreasePerSecond = weightPoops * numPoopsWithinRadius + weightDogs * numDogsWithinRadius + weightHoomans * numHoomansWithinRadius;
         Happiness -= happinessDecreasePerSecond * Time.deltaTime;
 
-        // Clamp happiness between 0 and 1
         Happiness = Mathf.Clamp(Happiness, -100, 100);
-        //print("Happiness: " + Happiness);
     }
 
     void OnCollisionEnter(Collision other)
@@ -202,6 +199,22 @@ public class DogMovement : MonoBehaviour
 
     void Poop()
     {
+        bool isOnMatchingSpot = false;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up, -Vector3.up, out hit))
+        {
+            if (hit.collider.gameObject.tag == Name)
+            {
+                isOnMatchingSpot = true;
+            }
+            else
+            {
+                isOnMatchingSpot = false;
+            }
+        }
+
+        if (isOnMatchingSpot || Name == "Smol Boi") return;
+
         Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), 1.5f, Random.Range(0.5f, 0.75f));
         Instantiate(PoopPrefab, transform.position + randomOffset, Quaternion.identity);
         audioSource.PlayOneShot(poopSound);
