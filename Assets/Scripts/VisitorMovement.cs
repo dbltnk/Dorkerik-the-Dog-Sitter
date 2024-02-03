@@ -15,12 +15,6 @@ public class VisitorMovement : MonoBehaviour
 
     private float moveInterval = 10f;
     private float moveRandInterval = 2f;
-    private float minMoveSpeed = 4f;
-    private float maxMoveSpeed = 6f;
-    private float acceleration = 0.5f;
-
-    private float moveSpeed;
-    private float currentSpeed = 0f;
     private float yPos;
     private Vector3 targetPosition;
     private Rigidbody rb;
@@ -96,7 +90,7 @@ public class VisitorMovement : MonoBehaviour
             }
         }
 
-        print("Moving towards: " + targetPosition);
+        //print("Moving towards: " + targetPosition);
         agent.SetDestination(targetPosition); // Move the agent towards the target
 
         // If the agent has arrived at the target, set animation active to false
