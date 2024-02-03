@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -155,7 +156,7 @@ public class DogMovement : MonoBehaviour
         }
     }
 
-    public void ChangeVisual()
+    public void ChangeVisual(bool poop = false)
     {
         if (draggable.isDragging)
         {
@@ -165,6 +166,11 @@ public class DogMovement : MonoBehaviour
         int childCount = meshesTransform.childCount;
         System.Random rand = new System.Random();
         int randomIndex = rand.Next(childCount);
+
+        if (poop)
+        {
+            randomIndex = 4;
+        }
 
         bool isAnyChildActive = false;
 
@@ -218,6 +224,15 @@ public class DogMovement : MonoBehaviour
         Vector3 randomOffset = new Vector3(Random.Range(-0.1f, 0.1f), 1.5f, Random.Range(0.5f, 0.75f));
         Instantiate(PoopPrefab, transform.position + randomOffset, Quaternion.identity);
         audioSource.PlayOneShot(poopSound);
+
+        ChangeVisual(true);
+        StartCoroutine(CoChangeVisual());
+    }
+
+    IEnumerator CoChangeVisual()
+    {
+        yield return new WaitForSeconds(1f);
+        ChangeVisual();
     }
 
     IEnumerator DisableRawImageAfterSeconds(float seconds)
