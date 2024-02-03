@@ -6,8 +6,8 @@ using UnityEngine;
 public class VisitorSpawner : MonoBehaviour
 {
     public GameObject visitorPrefab;
-    private float spawnIntervalMin = 2f;
-    private float spawnIntervalMax = 4f;
+    private float spawnIntervalMin = 4f;
+    private float spawnIntervalMax = 8f;
     private AudioSource audioSource;
     public AudioClip spawnSound;
 

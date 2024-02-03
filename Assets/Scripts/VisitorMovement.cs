@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class VisitorMovement : MonoBehaviour
 {
     private float minMoveRange = 8f;
     private float maxMoveRange = 24f;
+
+    private float minMoveRangeNearDog = 3f;
+    private float maxMoveRangeNearDog = 5f;
     private float moveRange;
 
     private float moveInterval = 10f;
@@ -36,9 +40,14 @@ public class VisitorMovement : MonoBehaviour
     public AudioClip leaveSound;
     public AudioClip moneySound;
 
+    private NavMeshAgent agent;
+    private bool hasReachedPosition;
+
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Start()
@@ -65,6 +74,8 @@ public class VisitorMovement : MonoBehaviour
 
     void Update()
     {
+        hasReachedPosition = agent.remainingDistance <= 1.5f && !agent.pathPending;
+
         if (isExiting)
         {
             exitTimer += Time.deltaTime;
@@ -85,44 +96,87 @@ public class VisitorMovement : MonoBehaviour
             }
         }
 
-        float step = currentSpeed * Time.deltaTime;
-        Vector3 moveDirection = (targetPosition - transform.position).normalized;
-        RaycastHit hit;
-        // Add a buffer distance to stop before the actual point of collision
-        float bufferDistance = Random.Range(0.5f, 1f);
-        if (Physics.Raycast(transform.position, moveDirection, out hit, step + bufferDistance))
-        {
-            PickNewTarget();
-            return;
-        }
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+        print("Moving towards: " + targetPosition);
+        agent.SetDestination(targetPosition); // Move the agent towards the target
 
-        // Accelerate when moving towards the target, decelerate when reached the target
-        if (transform.position != targetPosition)
+        // If the agent has arrived at the target, set animation active to false
+        if (hasReachedPosition)
         {
-            currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.deltaTime, moveSpeed);
+            GetComponentInChildren<Animation>().enabled = false;
+            // face the nearest GameObject with a DogMovement script
+            GameObject[] dogs = GameObject.FindGameObjectsWithTag("Dog");
+            if (dogs.Length == 0)
+            {
+                return;
+            }
+            GameObject nearestDog = GameObject.FindGameObjectsWithTag("Dog")[0];
+            if (nearestDog)
+            {
+                float nearestDistance = Vector3.Distance(transform.position, nearestDog.transform.position);
+                foreach (GameObject dog in GameObject.FindGameObjectsWithTag("Dog"))
+                {
+                    float distance = Vector3.Distance(transform.position, dog.transform.position);
+                    if (distance < nearestDistance)
+                    {
+                        nearestDog = dog;
+                        nearestDistance = distance;
+                    }
+                }
+                transform.LookAt(nearestDog.transform);
+            }
         }
         else
         {
-            currentSpeed = Mathf.Max(currentSpeed - acceleration * Time.deltaTime, 0);
+            GetComponentInChildren<Animation>().enabled = true;
         }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        PickNewTarget();
     }
 
     void PickNewTarget()
     {
-        moveRange = Random.Range(minMoveRange, maxMoveRange); // Pick a random move range
-        targetPosition = new Vector3(
-            transform.position.x + Random.Range(-moveRange, moveRange),
-            yPos,
-            transform.position.z + Random.Range(-moveRange, moveRange)
-        );
-        moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed); // Pick a random move speed
-        currentSpeed = 0; // Reset speed when a new target is picked
+        // Get all GameObjects with the DogMovement script
+        DogMovement[] dogs = FindObjectsOfType<DogMovement>();
+
+        // Check if there are any dogs in the scene
+        if (dogs.Length == 0)
+        {
+            moveRange = Random.Range(minMoveRange, maxMoveRange); // Pick a random move range
+            targetPosition = new Vector3(
+                transform.position.x + Random.Range(-moveRange, moveRange),
+                yPos,
+                transform.position.z + Random.Range(-moveRange, moveRange)
+            );
+            return;
+        }
+
+        // Calculate the distances to the dogs
+        List<(float distance, DogMovement dog)> distances = new List<(float distance, DogMovement dog)>();
+        foreach (DogMovement dog in dogs)
+        {
+            float distance = Vector3.Distance(transform.position, dog.transform.position);
+            distances.Add((distance, dog));
+        }
+
+        // Sort the list by distance
+        distances.Sort((x, y) => x.distance.CompareTo(y.distance));
+
+        // Take the 5 closest dogs, or all of them if there are less than 5
+        List<DogMovement> closestDogs = distances.Take(Mathf.Min(5, distances.Count)).Select(x => x.dog).ToList();
+
+        // Pick a random dog from the closest ones
+        DogMovement targetDog = closestDogs[Random.Range(0, closestDogs.Count)];
+
+        // Pick a random move range
+        moveRange = Random.Range(minMoveRangeNearDog, maxMoveRangeNearDog);
+
+        // Generate a random angle
+        float angle = Random.Range(0, 2 * Mathf.PI);
+
+        // Calculate the x and z coordinates using the random angle and move range
+        float x = targetDog.transform.position.x + moveRange * Mathf.Cos(angle);
+        float z = targetDog.transform.position.z + moveRange * Mathf.Sin(angle);
+
+        // Set the target position
+        targetPosition = new Vector3(x, yPos, z);
     }
 
     void CheckHappiness()
@@ -132,6 +186,10 @@ public class VisitorMovement : MonoBehaviour
 
     private IEnumerator CoCheckHappiness()
     {
+        if (!hasReachedPosition)
+        {
+            yield return null;
+        }
 
         if (Scorer.Instance.GetMoney() < 10)
         {

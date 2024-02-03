@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c28cd7acdad6efc1e9c3f66283352419, type: 2}
 --- !u!1 &8584994
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ GameObject:
   m_Name: Plane (1)
   m_TagString: Good Boi
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &8584995
 Transform:
@@ -834,8 +834,8 @@ GameObject:
   m_Name: Plane (4)
   m_TagString: Party Boi
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &143129743
 Transform:
@@ -2322,7 +2322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.79
+      value: -2.35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2330,7 +2330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.33
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2363,6 +2363,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_Name
       value: deco_bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2437,7 +2445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -9.21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2445,7 +2453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.4
+      value: 12.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2478,6 +2486,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
       propertyPath: m_Name
       value: deco_bush (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f8ba00607f036c42bd52cf1a26f6322, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2807,7 +2823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.449028
+      value: -8.79
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2815,7 +2831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.448616
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2848,6 +2864,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
       propertyPath: m_Name
       value: deco_tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d629b220c54be49428015cd2ca784ed7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3156,6 +3180,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_tables
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85d4c5682717f7e42904ba47946ab619, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85d4c5682717f7e42904ba47946ab619, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3345,6 +3377,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
       propertyPath: m_Name
       value: deco_paws
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3800,6 +3840,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_bone (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3965,7 +4013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87de009624497e4488b42b34ea492ec7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.9
+      value: -23.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87de009624497e4488b42b34ea492ec7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3973,7 +4021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87de009624497e4488b42b34ea492ec7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.26
+      value: 10.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87de009624497e4488b42b34ea492ec7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4007,6 +4055,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_dogsteps
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 87de009624497e4488b42b34ea492ec7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 87de009624497e4488b42b34ea492ec7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4034,7 +4090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.005077
+      value: -28.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4042,7 +4098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.596439
+      value: 1.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4075,6 +4131,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
       propertyPath: m_Name
       value: deco_tree2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df51e0dc9fc204418454d2a89993e5f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4519,8 +4583,8 @@ GameObject:
   m_Name: Plane (3)
   m_TagString: Looong Boi
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1000956046
 Transform:
@@ -5180,6 +5244,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_bone (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5201,8 +5273,8 @@ GameObject:
   m_Name: Plane (4)
   m_TagString: Chonky Boi
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1204507864
 Transform:
@@ -6047,8 +6119,8 @@ GameObject:
   m_Name: Plane (2)
   m_TagString: Lil' Pupper
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1297465747
 Transform:
@@ -7890,6 +7962,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_bone
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8702,6 +8782,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_paws (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9081,7 +9169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.58398
+      value: -18.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9089,7 +9177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.0842
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9122,6 +9210,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
       propertyPath: m_Name
       value: deco_table
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 346f2bf91c53ffa40ad2698b1a985d3d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9733,6 +9829,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_paws (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9966,6 +10070,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
       propertyPath: m_Name
       value: deco_paws (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 154ae48d67028fa4199f93267207e624, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10296,6 +10408,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
       propertyPath: m_Name
       value: deco_bone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38338d3a99c6c1043905330be8f16bdc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
