@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartScreen : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class StartScreen : MonoBehaviour
     {
         // freeze the game but still allow UI interaction
         Time.timeScale = 0;
+        GetComponent<Image>().enabled = true;
     }
 
     public void StartGame()
