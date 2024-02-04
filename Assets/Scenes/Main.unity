@@ -11168,10 +11168,11 @@ MonoBehaviour:
   buyPlaceSound: {fileID: 8300000, guid: d19cbab2f544bdc309df6404bd479084, type: 3}
   buyDogSound: {fileID: 8300000, guid: f99deda78df291edb870fd4854ee537a, type: 3}
   buyTreatSound: {fileID: 8300000, guid: d19cbab2f544bdc309df6404bd479084, type: 3}
+  QuestionMarkSprite: {fileID: 0}
   Places:
   - Button: {fileID: 1692967681}
     GameObject: {fileID: 1994705730}
-    Price: 10
+    Price: 30
     Bought: 0
     Name: Basic
   - Button: {fileID: 1727886675}
@@ -11200,31 +11201,37 @@ MonoBehaviour:
     Price: 10
     Bought: 0
     Name: Smol Boi
+    CorrespondingGameObject: {fileID: 0}
   - Button: {fileID: 1481598814}
     DogPrefab: {fileID: 5928087351302878577, guid: 6ce7b2ad1a53146e89b824f773ae0c62, type: 3}
     Price: 30
     Bought: 0
     Name: Good Boy
+    CorrespondingGameObject: {fileID: 1994705730}
   - Button: {fileID: 168678808}
     DogPrefab: {fileID: 5928087351302878577, guid: 1480682acc223f0ce95db92d17d21e92, type: 3}
     Price: 50
     Bought: 0
     Name: Lil' Pupper
+    CorrespondingGameObject: {fileID: 1246923505}
   - Button: {fileID: 299117600}
     DogPrefab: {fileID: 5928087351302878577, guid: f38d2f7dfd30284a5adef1be1ab03454, type: 3}
     Price: 100
     Bought: 0
     Name: Looong Boi
+    CorrespondingGameObject: {fileID: 512208450}
   - Button: {fileID: 1661470986}
     DogPrefab: {fileID: 5928087351302878577, guid: 876109e92cf1fc95bb7e6a053cb32d75, type: 3}
     Price: 200
     Bought: 0
     Name: Chonky Boi
+    CorrespondingGameObject: {fileID: 1282031686}
   - Button: {fileID: 718163702}
     DogPrefab: {fileID: 5928087351302878577, guid: 49f261b9ce88a8b45817ed7f05a5e5ed, type: 3}
     Price: 500
     Bought: 0
     Name: Party Boi
+    CorrespondingGameObject: {fileID: 425257626}
   Treats:
   - Button: {fileID: 243279446}
     TreatPrefab: {fileID: 7002043649004227994, guid: 5341f378a660f79c1a19942942dc06d6, type: 3}

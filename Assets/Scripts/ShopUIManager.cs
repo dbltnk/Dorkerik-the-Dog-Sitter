@@ -20,6 +20,8 @@ public class ShopUIManager : MonoBehaviour
     public AudioClip buyDogSound;
     public AudioClip buyTreatSound;
 
+    public Sprite QuestionMarkSprite;
+
     [System.Serializable]
     public class Place
     {
@@ -38,6 +40,8 @@ public class ShopUIManager : MonoBehaviour
         public int Price;
         public bool Bought;
         public string Name;
+        public GameObject CorrespondingGameObject;
+        public Sprite OriginalSprite;
     }
 
     [System.Serializable]
@@ -67,6 +71,11 @@ public class ShopUIManager : MonoBehaviour
     {
         audioSource = GetComponentInParent<AudioSource>();
 
+        for (int i = 0; i < Dogs.Count; i++)
+        {
+            Dog dog = Dogs[i];
+            dog.OriginalSprite = dog.Button.image.sprite;
+        }
     }
 
     void Start()
@@ -128,6 +137,21 @@ public class ShopUIManager : MonoBehaviour
         {
             // If the Tab key is pressed, call the CycleTabs method
             CycleTabs();
+        }
+
+        for (int i = 0; i < Dogs.Count; i++)
+        {
+            Dog dog = Dogs[i];
+            if (dog.CorrespondingGameObject == null || dog.CorrespondingGameObject.activeInHierarchy)
+            {
+                dog.Button.interactable = Scorer.Instance.CanAfford(dog.Price);
+                dog.Button.image.sprite = dog.OriginalSprite; // Set the sprite to the original one
+            }
+            else
+            {
+                dog.Button.interactable = false;
+                dog.Button.image.sprite = QuestionMarkSprite; // Set the sprite to the question mark symbol
+            }
         }
     }
 
