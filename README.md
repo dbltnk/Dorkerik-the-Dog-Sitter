@@ -15,3 +15,13 @@ IDEAS!
 - Buy a social media spot where they can pose with the dogs (go there, they show a specific dog icon, then you bring the dog over so they can take a photo with the dog)
 - If they do this, you make more money and more people come
 - Think about mechanisms for attracting more people 
+
+
+WEEN IDEAS
+- Golden ween! (Fluffy)
+- Scruffy sherlock holmes ween
+- Astronaut ween
+- Sweater ween with glasses
+- Ice cream ween
+- Rainbow sparkle ween with a unicorn horn
+- Ween in a lil' rain jacket - lighthouse keeper style
