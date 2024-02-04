@@ -1,5 +1,5 @@
 IDEAS!
-- Doggy playground slots outside (additional 'spots'
+- Doggy playground slots outside (additional 'spots')
 - You can add rooms
 - You can decorate and customise your daycare decor
 - You can share your doggy daycare with a friend so they can see it - beautiful furniture 
