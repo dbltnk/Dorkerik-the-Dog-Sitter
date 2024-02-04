@@ -30,14 +30,6 @@ public class CameraMovement : MonoBehaviour
         }
 
         HandleKeyboardInput();
-
-        foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
-        {
-            if (Input.GetKey(kcode))
-            {
-                Debug.Log("KeyCode: " + kcode);
-            }
-        }
     }
 
     void HandleKeyboardInput()

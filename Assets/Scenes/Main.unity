@@ -1224,7 +1224,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: DogButtonClicked
+        m_MethodName: DogButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1356,7 +1356,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: TreatButtonClicked
+        m_MethodName: TreatButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1620,7 +1620,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: DogButtonClicked
+        m_MethodName: DogButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3600,7 +3600,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: TreatButtonClicked
+        m_MethodName: TreatButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3751,7 +3751,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: DogButtonClicked
+        m_MethodName: DogButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6404,7 +6404,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: TreatButtonClicked
+        m_MethodName: TreatButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6773,7 +6773,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: TreatButtonClicked
+        m_MethodName: TreatButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7746,7 +7746,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: DogButtonClicked
+        m_MethodName: DogButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8894,7 +8894,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: DogButtonClicked
+        m_MethodName: DogButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9026,7 +9026,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: DogButtonClicked
+        m_MethodName: DogButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9806,7 +9806,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: TreatButtonClicked
+        m_MethodName: TreatButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10872,7 +10872,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2035612568}
         m_TargetAssemblyTypeName: ShopUIManager, Assembly-CSharp
-        m_MethodName: TreatButtonClicked
+        m_MethodName: TreatButtonClickedUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

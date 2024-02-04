@@ -54,6 +54,15 @@ public class ShopUIManager : MonoBehaviour
     public List<Dog> Dogs;
     public List<Treat> Treats;
 
+    public enum ActiveTab
+    {
+        Dogs,
+        Treats,
+        Places
+    }
+
+    private ActiveTab currentTab;
+
     private void Awake()
     {
         audioSource = GetComponentInParent<AudioSource>();
@@ -85,6 +94,41 @@ public class ShopUIManager : MonoBehaviour
             treat.Button.interactable = Scorer.Instance.CanAfford(treat.Price);
         }
 
+        // Check for key presses from 1 to 9
+        for (int i = 1; i <= 9; i++)
+        {
+            if (Input.GetKeyDown(i.ToString()))
+            {
+                // Depending on the currently active tab and the key pressed, call the corresponding button click method
+                switch (currentTab)
+                {
+                    case ActiveTab.Dogs:
+                        if (i - 1 < Dogs.Count)
+                        {
+                            DogButtonClicked(i - 1, true);
+                        }
+                        break;
+                    case ActiveTab.Treats:
+                        if (i - 1 < Treats.Count)
+                        {
+                            TreatButtonClicked(i - 1, true);
+                        }
+                        break;
+                    case ActiveTab.Places:
+                        if (i - 1 < Places.Count)
+                        {
+                            PlaceButtonClicked(i - 1);
+                        }
+                        break;
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            // If the Tab key is pressed, call the CycleTabs method
+            CycleTabs();
+        }
     }
 
     public void PlaceButtonClicked(int index)
@@ -108,7 +152,17 @@ public class ShopUIManager : MonoBehaviour
         }
     }
 
-    public void DogButtonClicked(int index)
+    public void DogButtonClickedUI(int index)
+    {
+        DogButtonClicked(index, false);
+    }
+
+    public void TreatButtonClickedUI(int index)
+    {
+        TreatButtonClicked(index, false);
+    }
+
+    public void DogButtonClicked(int index, bool isKeyboardInput = false)
     {
         Dog dog = Dogs[index];
         bool success = Scorer.Instance.TrySpendMoney(dog.Price);
@@ -116,17 +170,43 @@ public class ShopUIManager : MonoBehaviour
         if (success)
         {
             GameObject dogsParent = GameObject.Find("Dogs");
-            System.Random rand = new System.Random();
-            float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
-            float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
-            float fixedY = 0.0f;
-            Instantiate(dog.DogPrefab, new Vector3(randomX, fixedY, randomZ), Quaternion.identity, dogsParent.transform);
+
+            Vector3 spawnPosition = Vector3.zero;
+            if (isKeyboardInput)
+            {
+                // Get the mouse position in screen space
+                Vector3 mousePosition = Input.mousePosition;
+
+                // Create a ray from the camera to the mouse position
+                Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+
+                // Define the distance from the hit point to the spawn position
+                float distanceToGround = 0.17f; // Adjust this value as needed
+
+                // Perform the raycast
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    // If the raycast hits something, set the spawn position a fixed distance above the hit point
+                    spawnPosition = hit.point + new Vector3(0, distanceToGround, 0);
+                } 
+            }
+            else
+            {
+                System.Random rand = new System.Random();
+                float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
+                float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
+                float fixedY = 0.0f;
+                spawnPosition = new Vector3(randomX, fixedY, randomZ);
+            }
+
+            Instantiate(dog.DogPrefab, spawnPosition, Quaternion.identity, dogsParent.transform);
             dog.Bought = true;
             audioSource.PlayOneShot(buyDogSound);
         }
     }
 
-    public void TreatButtonClicked(int index)
+    public void TreatButtonClicked(int index, bool isKeyboardInput = false)
     {
         Treat treat = Treats[index];
         bool success = Scorer.Instance.TrySpendMoney(treat.Price);
@@ -134,13 +214,39 @@ public class ShopUIManager : MonoBehaviour
         if (success)
         {
             GameObject treatsParent = GameObject.Find("Treats");
-            System.Random rand = new System.Random();
-            float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
-            float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
-            float fixedY = 5.0f;
+
+            Vector3 spawnPosition = Vector3.zero;
+            if (isKeyboardInput)
+            {
+                // Get the mouse position in screen space
+                Vector3 mousePosition = Input.mousePosition;
+
+                // Create a ray from the camera to the mouse position
+                Ray ray = Camera.main.ScreenPointToRay(mousePosition);
+
+                // Define the distance from the hit point to the spawn position
+                float distanceToGround = 1f; // Adjust this value as needed
+
+                // Perform the raycast
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    // If the raycast hits something, set the spawn position a fixed distance above the hit point
+                    spawnPosition = hit.point + new Vector3(0, distanceToGround, 0);
+                } 
+            }
+            else
+            {
+                System.Random rand = new System.Random();
+                float randomX = (float)(rand.NextDouble() * (15 - (-17)) + (-17));
+                float randomZ = (float)(rand.NextDouble() * (4 - (-13)) + (-13));
+                float fixedY = 5.0f;
+                spawnPosition = new Vector3(randomX, fixedY, randomZ);
+            }
+
             float randomYRotation = Random.Range(0f, 360f);
             Quaternion randomRotation = Quaternion.Euler(0, randomYRotation, 0);
-            Instantiate(treat.TreatPrefab, new Vector3(randomX, fixedY, randomZ), randomRotation, treatsParent.transform);
+            Instantiate(treat.TreatPrefab, spawnPosition, randomRotation, treatsParent.transform);
             treat.Bought = true;
             audioSource.PlayOneShot(buyTreatSound);
         }
@@ -159,6 +265,7 @@ public class ShopUIManager : MonoBehaviour
         TabPlace.interactable = true;
 
         audioSource.PlayOneShot(clickSound);
+        currentTab = ActiveTab.Dogs;
     }
 
     public void TabTreatsClicked()
@@ -174,6 +281,7 @@ public class ShopUIManager : MonoBehaviour
         TabPlace.interactable = true;
 
         audioSource.PlayOneShot(clickSound);
+        currentTab = ActiveTab.Treats;
     }
 
     public void TabPlaceClicked()
@@ -189,5 +297,26 @@ public class ShopUIManager : MonoBehaviour
         TabPlace.interactable = false;
 
         audioSource.PlayOneShot(clickSound);
+        currentTab = ActiveTab.Places;
+    }
+
+    void CycleTabs()
+    {
+        // Change currentTab to the next tab and call the corresponding tab click method
+        switch (currentTab)
+        {
+            case ActiveTab.Dogs:
+                currentTab = ActiveTab.Treats;
+                TabTreatsClicked();
+                break;
+            case ActiveTab.Treats:
+                currentTab = ActiveTab.Places;
+                TabPlaceClicked();
+                break;
+            case ActiveTab.Places:
+                currentTab = ActiveTab.Dogs;
+                TabDogsClicked();
+                break;
+        }
     }
 }
