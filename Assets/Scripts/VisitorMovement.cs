@@ -9,8 +9,8 @@ public class VisitorMovement : MonoBehaviour
     private float minMoveRange = 8f;
     private float maxMoveRange = 24f;
 
-    private float minMoveRangeNearDog = 1f;
-    private float maxMoveRangeNearDog = 2f;
+    private float minMoveRangeNearDog = 2f;
+    private float maxMoveRangeNearDog = 3f;
     private float moveRange;
 
     private float moveInterval = 10f;
