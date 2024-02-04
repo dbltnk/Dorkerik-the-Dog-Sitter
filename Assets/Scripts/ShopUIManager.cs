@@ -42,6 +42,7 @@ public class ShopUIManager : MonoBehaviour
         public string Name;
         public GameObject CorrespondingGameObject;
         public Sprite OriginalSprite;
+        public bool Unlocked = false;
     }
 
     [System.Serializable]
@@ -146,11 +147,13 @@ public class ShopUIManager : MonoBehaviour
             {
                 dog.Button.interactable = Scorer.Instance.CanAfford(dog.Price);
                 dog.Button.image.sprite = dog.OriginalSprite; // Set the sprite to the original one
+                dog.Unlocked = true;
             }
             else
             {
                 dog.Button.interactable = false;
                 dog.Button.image.sprite = QuestionMarkSprite; // Set the sprite to the question mark symbol
+                dog.Unlocked = false;
             }
         }
     }
@@ -172,6 +175,8 @@ public class ShopUIManager : MonoBehaviour
                 // Update the button text and disable the button
                 place.Button.interactable = false;
                 audioSource.PlayOneShot(buyPlaceSound);
+
+                TabDogsClicked();
             }
         }
     }
@@ -189,8 +194,10 @@ public class ShopUIManager : MonoBehaviour
     public void DogButtonClicked(int index, bool isKeyboardInput = false)
     {
         Dog dog = Dogs[index];
-        bool success = Scorer.Instance.TrySpendMoney(dog.Price);
 
+        if (!dog.Unlocked) return;
+
+        bool success = Scorer.Instance.TrySpendMoney(dog.Price);
         if (success)
         {
             GameObject dogsParent = GameObject.Find("Dogs");
