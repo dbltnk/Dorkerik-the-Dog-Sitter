@@ -1,39 +1,31 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class VisitorSpawner : MonoBehaviour
 {
-    public GameObject visitorPrefab;
-    private float spawnIntervalMin = 4f;
-    private float spawnIntervalMax = 8f;
-    private AudioSource audioSource;
-    public AudioClip spawnSound;
+    [SerializeField] private GameObject visitorPrefab;
+    [SerializeField] private AudioClip spawnSound;
+    [SerializeField] private float spawnIntervalMin = 4f;
+    [SerializeField] private float spawnIntervalMax = 8f;
 
-    void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    private AudioSource _audioSource;
 
-    void Start()
-    {
-        StartCoroutine(CoSpawnVisitor());
-    }
+    private void Awake() => _audioSource = GetComponent<AudioSource>();
 
-    IEnumerator CoSpawnVisitor()
+    private void Start() => StartCoroutine(SpawnVisitorCoroutine());
+
+    private IEnumerator SpawnVisitorCoroutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(spawnIntervalMin, spawnIntervalMax));
-            SpawnVisitor();
+            InstantiateVisitor();
         }
     }
 
-    void SpawnVisitor()
+    private void InstantiateVisitor()
     {
-        GameObject vis = Instantiate(visitorPrefab, transform.position, Quaternion.identity);
-        vis.transform.SetParent(GameObject.Find("Hoomans").transform);
-        audioSource.PlayOneShot(spawnSound);
+        var visitorInstance = Instantiate(visitorPrefab, transform.position, Quaternion.identity, GameObject.Find("Hoomans").transform);
+        _audioSource.PlayOneShot(spawnSound);
     }
 }
