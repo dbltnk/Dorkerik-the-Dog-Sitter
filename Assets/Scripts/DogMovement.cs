@@ -70,9 +70,14 @@ public class DogMovement : MonoBehaviour
         rb.isKinematic = true;
         rb.useGravity = false;
         ChangeVisual();
-        InvokeRepeating("ChangeVisual", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
+        InvokeRepeating("ChangeVisualWrapper", moveInterval, Random.Range(moveInterval - moveRandInterval, moveInterval + moveRandInterval));
         InvokeRepeating("Poop", Random.Range(5f, 7f), Random.Range(8f, 10f));
         InvokeRepeating("Bark", Random.Range(5f, 7f), Random.Range(8f, 10f));
+    }
+
+    public void ChangeVisualWrapper()
+    {
+        ChangeVisual();
     }
 
     void Update()
