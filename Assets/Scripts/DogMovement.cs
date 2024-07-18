@@ -63,7 +63,7 @@ public class DogMovement : MonoBehaviour
 
     void Start()
     {
-        // find a RawImage component in any child
+        // find a RawImage component in any child.
         rawImage = GetComponentInChildren<RawImage>();
 
         rb = GetComponent<Rigidbody>();
